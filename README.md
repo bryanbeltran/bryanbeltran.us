@@ -1,10 +1,11 @@
 Here is the **corrected version** of your README. The issue was with the extra set of backticks in the line:
 
-`````markdown
+``````markdown
 `````bash
 git clone ...
 ```` ← ❌ too many backticks
 `````
+``````
 
 You should use **three backticks** consistently. Here's the fully fixed and copy-paste–ready version:
 
@@ -185,4 +186,7 @@ Original work © Timothy Lin (timlrx) under MIT license.
 ```
 
 ```
-`````
+
+```
+
+```
