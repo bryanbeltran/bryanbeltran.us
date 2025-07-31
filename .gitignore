@@ -45,3 +45,12 @@ yarn-error.log*
 
 # Contentlayer
 .contentlayer
+
+# IDE settings
+.vscode/
+
+# Auto-generated components file
+components.json
+
+# Ignore npm lockfile if using pnpm
+package-lock.json
