@@ -6,9 +6,10 @@ interface CardProps {
   description: string
   href?: string
   imgSrc?: string
+  status?: string // Added status prop
 }
 
-const Card = ({ title, description, imgSrc, href }: CardProps) => (
+const Card = ({ title, description, imgSrc, href, status }: CardProps) => (
   <div className="md max-w-[544px] p-4 md:w-1/2">
     <div
       className={`${
@@ -45,6 +46,11 @@ const Card = ({ title, description, imgSrc, href }: CardProps) => (
             title
           )}
         </h2>
+        {status && (
+          <div className="text-primary-500 dark:text-primary-400 mb-2 text-sm font-semibold">
+            {status}
+          </div>
+        )}
         <p className="prose mb-3 max-w-none text-gray-500 dark:text-gray-400">{description}</p>
         {href && (
           <Link
