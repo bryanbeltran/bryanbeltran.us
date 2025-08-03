@@ -14,6 +14,7 @@ const Header = () => {
 
   return (
     <header className={headerClass}>
+      {/* Logo serves as the home link */}
       <Link href="/" aria-label={siteMetadata.headerTitle}>
         <div className="flex items-center justify-between">
           <div className="mr-3">
@@ -28,8 +29,10 @@ const Header = () => {
           )}
         </div>
       </Link>
+
       <div className="flex items-center space-x-4 leading-5 sm:-mr-6 sm:space-x-6">
-        <div className="no-scrollbar hidden max-w-40 items-center gap-x-4 overflow-x-auto sm:flex md:max-w-72 lg:max-w-96">
+        {/* Exclude '/' since logo already links to Home */}
+        <div className="no-scrollbar hidden items-center gap-x-4 overflow-x-auto sm:flex sm:max-w-full md:max-w-2xl lg:max-w-4xl">
           {headerNavLinks
             .filter((link) => link.href !== '/')
             .map((link) => (
