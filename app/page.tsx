@@ -153,7 +153,7 @@ export default function Home() {
       <footer className="text-muted-foreground border-t pt-16 text-center text-sm">
         <p>© {new Date().getFullYear()} Bryan Beltran</p>
         <div className="mt-2 flex justify-center gap-4">
-          <Link href="mailto:bryan@bryanbeltran.us" className="hover:underline">
+          <Link href="mailto:bryan.beltran@mnsu.edu" className="hover:underline">
             Email
           </Link>
           <Link href="https://github.com/bbeltran" className="hover:underline">
