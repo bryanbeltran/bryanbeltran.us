@@ -1,8 +1,6 @@
 import { genPageMetadata } from 'app/seo'
 import { Metadata } from 'next'
 import siteMetadata from '@/data/siteMetadata'
-import SocialIcon from '@/components/social-icons'
-import ThemeSwitch from '@/components/ThemeSwitch'
 
 export const metadata: Metadata = genPageMetadata({ title: 'Contact | Bryan Beltran' })
 
@@ -14,8 +12,9 @@ export default function Contact() {
           Contact Me
         </h1>
         <p className="text-lg text-gray-600 dark:text-gray-400">
-          Let’s build something impactful together. I specialize in backend engineering and
-          technical translation for mission-driven teams.
+          Let's build something impactful together. I specialize in backend development, but I am
+          always open to opportunities learn something new or to collaborate on projects that are
+          meaningful and impactful.
         </p>
       </div>
 

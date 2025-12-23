@@ -8,7 +8,7 @@ export default function Home() {
       <section className="mx-auto max-w-xl scroll-mt-20 space-y-2 text-center">
         <h1 className="text-4xl font-bold tracking-tight">Bryan Beltran</h1>
         <p className="text-muted-foreground text-base leading-relaxed text-balance">
-          Backend Engineer & Translator — building tools for focus, planning, and local impact.
+          Backend Engineer — building tools for personal use.
         </p>
       </section>
 
@@ -16,10 +16,10 @@ export default function Home() {
       <section className="scroll-mt-20 space-y-2 pt-8">
         <h2 className="text-2xl font-semibold tracking-tight">About</h2>
         <p className="text-muted-foreground leading-relaxed text-balance">
-          I’m a backend software engineer with 7 years of experience in Customer Care tech. I build
-          tools that improve workflows and user experience — and I run a side business offering
-          Spanish-English translation for schools and clinics. Most of my personal projects are
-          currently in development.
+          I'm a backend software engineer with 7 years of experience. I build software that enables
+          great customer experiences and performs at scale. My personal projects are currently in
+          development, but each is something that fills a need in my life or brings me joy while
+          allowing me to learn.
         </p>
         <Link
           href="/about"
@@ -51,13 +51,13 @@ export default function Home() {
 
           <Card className="bg-muted/40 ring-border hover:ring-primary rounded-xl shadow-sm ring-1 transition hover:ring-2">
             <CardContent className="space-y-2 p-4">
-              <CardTitle className="leading-snug">ZipperMerge Simulator</CardTitle>
+              <CardTitle className="leading-snug">The Gathering Project</CardTitle>
               <p className="text-muted-foreground text-sm leading-relaxed text-balance">
-                Simulates traffic flow with zipper merging and roundabout behavior.
+                Website for a nonprofit organization built with Next.js.
               </p>
-              <p className="text-muted-foreground text-xs">In development – GitHub only</p>
+              <p className="text-muted-foreground text-xs">Launched</p>
               <Link
-                href="https://github.com/bbeltran/zippermerge"
+                href="https://github.com/bryanbeltran/thegatheringproject.us"
                 className="text-primary text-sm hover:underline"
               >
                 View on GitHub
@@ -89,42 +89,14 @@ export default function Home() {
         </Link>
       </section>
 
-      {/* Translation Services Preview */}
-      <section className="bg-muted/60 mt-4 scroll-mt-20 space-y-2 rounded-xl p-6">
-        <h2 className="text-2xl font-semibold tracking-tight">🌐 Translation Services</h2>
-        <p className="text-muted-foreground leading-relaxed text-balance">
-          Need Spanish-English translation? I offer fast, affordable, culturally fluent services for
-          Minnesota schools, clinics, and nonprofits.
-        </p>
-        <Link
-          href="/translation"
-          className="text-primary font-medium underline underline-offset-4 hover:opacity-90"
-        >
-          Explore Services →
-        </Link>
-      </section>
-
       {/* Blog Teaser */}
       <section className="scroll-mt-20 space-y-4 pt-8">
         <h2 className="text-2xl font-semibold tracking-tight">From the Blog</h2>
         <p className="text-muted-foreground leading-relaxed text-balance">
-          Notes on tools I’m building, translating, and exploring. Posts coming soon.
+          Notes on tools I'm building and exploring. Posts coming soon.
         </p>
 
         <div className="space-y-2">
-          <div>
-            <h3 className="text-lg font-medium">
-              <Link
-                href="/blog/building-a-translation-service"
-                className="text-primary underline underline-offset-4 hover:opacity-90"
-              >
-                Building a One-Person Translation Service
-              </Link>
-            </h3>
-            <p className="text-muted-foreground text-sm text-balance">
-              How I set up my translation side business with modern tools and minimal overhead.
-            </p>
-          </div>
           <div>
             <h3 className="text-lg font-medium">
               <Link

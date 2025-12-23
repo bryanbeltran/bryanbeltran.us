@@ -16,11 +16,10 @@ const projectsData: Project[] = [
     status: 'In Progress',
   },
   {
-    title: 'TrafficSim',
-    description:
-      'A backend simulation engine to model zipper merges and roundabout behavior. Built for exploring traffic flow logic in code.',
-    href: 'https://github.com/bryanbeltran/traffic-sim',
-    status: 'In Progress',
+    title: 'The Gathering Project',
+    description: 'Website for a nonprofit organization. Built with Next.js and hosted on Vercel.',
+    href: 'https://github.com/bryanbeltran/thegatheringproject.us',
+    status: 'Launched',
   },
   {
     title: 'Mitten Index',
