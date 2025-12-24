@@ -34,15 +34,16 @@ export default function Home() {
         <h2 className="text-2xl font-semibold tracking-tight">What I’m Building</h2>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           <Card className="bg-muted/40 ring-border hover:ring-primary rounded-xl shadow-sm ring-1 transition hover:ring-2">
-            <CardContent className="space-y-2 p-4">
+            <CardContent className="flex h-full flex-col space-y-2 p-4">
               <CardTitle className="leading-snug">SeedStarter</CardTitle>
               <p className="text-muted-foreground text-sm leading-relaxed text-balance">
-                A USDA zone-aware garden planner with frost date mapping.
+                A garden planning tool that shows ideal planting windows based on your USDA zone and
+                frost data. Built for backyard growers who want timing they can trust.
               </p>
               <p className="text-muted-foreground text-xs">In development – GitHub only</p>
               <Link
-                href="https://github.com/bbeltran/seedstarter"
-                className="text-primary text-sm hover:underline"
+                href="https://github.com/bryanbeltran/seed-starter"
+                className="text-primary mt-auto text-sm hover:underline"
               >
                 View on GitHub
               </Link>
@@ -50,7 +51,7 @@ export default function Home() {
           </Card>
 
           <Card className="bg-muted/40 ring-border hover:ring-primary rounded-xl shadow-sm ring-1 transition hover:ring-2">
-            <CardContent className="space-y-2 p-4">
+            <CardContent className="flex h-full flex-col space-y-2 p-4">
               <CardTitle className="leading-snug">The Gathering Project</CardTitle>
               <p className="text-muted-foreground text-sm leading-relaxed text-balance">
                 Website for a nonprofit organization built with Next.js.
@@ -58,7 +59,7 @@ export default function Home() {
               <p className="text-muted-foreground text-xs">Launched</p>
               <Link
                 href="https://github.com/bryanbeltran/thegatheringproject.us"
-                className="text-primary text-sm hover:underline"
+                className="text-primary mt-auto text-sm hover:underline"
               >
                 View on GitHub
               </Link>
@@ -66,15 +67,16 @@ export default function Home() {
           </Card>
 
           <Card className="bg-muted/40 ring-border hover:ring-primary rounded-xl shadow-sm ring-1 transition hover:ring-2">
-            <CardContent className="space-y-2 p-4">
+            <CardContent className="flex h-full flex-col space-y-2 p-4">
               <CardTitle className="leading-snug">Mitten Index</CardTitle>
               <p className="text-muted-foreground text-sm leading-relaxed text-balance">
-                A cold-weather comfort score based on local weather and wind chill.
+                A cold-weather readiness score that combines forecast data with heuristics to help
+                you decide how bundled up to get.
               </p>
               <p className="text-muted-foreground text-xs">In development – GitHub only</p>
               <Link
-                href="https://github.com/bbeltran/mitten-index"
-                className="text-primary text-sm hover:underline"
+                href="https://github.com/bryanbeltran/mitten-index"
+                className="text-primary mt-auto text-sm hover:underline"
               >
                 View on GitHub
               </Link>
@@ -93,7 +95,7 @@ export default function Home() {
       <section className="scroll-mt-20 space-y-4 pt-8">
         <h2 className="text-2xl font-semibold tracking-tight">From the Blog</h2>
         <p className="text-muted-foreground leading-relaxed text-balance">
-          Notes on tools I'm building and exploring. Posts coming soon.
+          Notes on tools I'm building and exploring.
         </p>
 
         <div className="space-y-2">
@@ -128,7 +130,7 @@ export default function Home() {
           <Link href="mailto:bryan.beltran@mnsu.edu" className="hover:underline">
             Email
           </Link>
-          <Link href="https://github.com/bbeltran" className="hover:underline">
+          <Link href="https://github.com/bryanbeltran" className="hover:underline">
             GitHub
           </Link>
           <Link href="/about" className="hover:underline">

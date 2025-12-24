@@ -1,0 +1,35 @@
+---
+title: 'Planning Gardens with Zone-Aware Scheduling'
+date: '2025-12-23'
+summary: 'Behind the scenes of SeedStarter — syncing planting tasks to frost dates with USDA zones.'
+tags: ['gardening', 'tools', 'seedstarter']
+draft: false
+---
+
+Every year I buy new seeds and tell myself I'm going to grow something new. And every year, I miss the window on a few of them.
+
+Manually setting up calendar reminders is tedious, and I don't want to do it for 10–20 plants every season. The predictable result is that I either start seeds too late—or too early. Too early usually means leggy plants, roots outgrowing their containers, extra maintenance, and seedlings that stall once they finally make it outside. That almost always translates into a worse harvest.
+
+This project is really just me solving that problem for myself. I want something that tells me when to start seeds, and I want it to work automatically.
+
+## What I'm Building
+
+SeedStarter currently lives somewhere between a concept and a minimal viable product. The idea is straightforward: you enter your zip code, pick a few common crops, and it tells you when to start seeds indoors and when to transplant them. From there, it generates a `.ics` file you can drop straight into your calendar.
+
+That's the scope for now. I have plenty of ideas beyond that, but the goal at the moment is to get the basics right.
+
+## The Technical Approach
+
+SeedStarter is built with Next.js and TypeScript. To determine a user's USDA hardiness zone, I'm using zip-code-based geocoding combined with shapefile matching—not browser geolocation.
+
+The flow looks like this: the zip code is converted into latitude and longitude, then turf.js runs a point-in-polygon query against USDA hardiness zone shapefiles to determine the zone. The shapefiles come from the PRISM Climate Group at Oregon State University, which maintains the official USDA hardiness zone maps.
+
+Before this project, I had never worked with shapefiles at all, so that's been its own learning curve. As for edge cases—people near zone boundaries, data mismatches—that's still an open problem.
+
+Mapping zones to frost dates, calculating planting windows, and accounting for different crop requirements are also still in progress. I'm aware that loading and querying large shapefiles in the browser isn't ideal from a performance standpoint. For an MVP, it may be acceptable; longer-term, I'll likely move that work behind an API and handle it server-side. I'm still early enough with turf.js that I don't have strong opinions yet, but I'm learning as I go.
+
+## Current State
+
+Right now the focus is simple: enter a zip code, select seeds, get dates, export to a calendar. That's it.
+
+The technical challenges are real, but they're the kind I enjoy—learning unfamiliar tools, working with messy real-world data, and building something I'll actually use. I don't yet know what I'd do differently if I started over, but I'm not far enough along to need that clarity. This is a personal tool first, and I'm comfortable figuring it out one step at a time.

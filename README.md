@@ -1,28 +1,16 @@
-Here is the **corrected version** of your README. The issue was with the extra set of backticks in the line:
-
-``````markdown
-`````bash
-git clone ...
-```` ← ❌ too many backticks
-`````
-``````
-
-You should use **three backticks** consistently. Here's the fully fixed and copy-paste–ready version:
-
-````markdown
-# Bryan Beltran’s Personal Blog & Portfolio
+# Bryan Beltran's Personal Blog & Portfolio
 
 > **Forked from** [timlrx/tailwind-nextjs-starter-blog](https://github.com/timlrx/tailwind-nextjs-starter-blog)
 
 This is my customized fork of **timlrx/tailwind-nextjs-starter-blog**, now tailored as my own personal website, blog, and developer portfolio.  
-Built with Next.js 15’s App Router, Tailwind CSS, MDX, and Contentlayer, it features:
+Built with Next.js 15's App Router, Tailwind CSS, MDX, and Contentlayer, it features:
 
 - **MDX-powered blog** with syntax highlighting, math support, and custom components
 - **Light & dark themes**, auto-detected or user-selectable
 - **Server Components** & **Incremental Static Regeneration** for top performance
-- **Simple content management** via Markdown/MDX files under `content/blog/`
+- **Simple content management** via Markdown/MDX files under `data/blog/`
 - **Projects showcase** powered by a data file at `data/projectsData.ts`
-- **Author profile** configured in `data/authors/default.md`
+- **Author profile** configured in `data/authors/default.mdx`
 - **Custom navigation** in `data/headerNavLinks.ts`
 - **SEO-ready** with RSS feed, sitemap, and built-in metadata helpers
 - **Optional integrations**: analytics (Umami, Plausible, GA), comments (Giscus, Disqus), newsletter (Mailchimp, Beehiiv), search (Kbar, Algolia)
@@ -32,11 +20,11 @@ Built with Next.js 15’s App Router, Tailwind CSS, MDX, and Contentlayer, it fe
 ## Quick Start
 
 1. **Clone your fork**
+
    ```bash
    git clone https://github.com/bryanbeltran/bryanbeltran.us.git
    cd bryanbeltran.us
    ```
-````
 
 2. **Install dependencies**
 
@@ -57,10 +45,10 @@ Built with Next.js 15’s App Router, Tailwind CSS, MDX, and Contentlayer, it fe
    Open [http://localhost:3000](http://localhost:3000) to view.
 
 4. **Start writing!**
-   - Add blog posts as `.mdx` files under `content/blog/`
+   - Add blog posts as `.mdx` files under `data/blog/`
    - Update projects in `data/projectsData.ts`
-   - Personalize site metadata in `data/siteMetadata.ts`
-   - Configure author info in `data/authors/default.md`
+   - Personalize site metadata in `data/siteMetadata.js`
+   - Configure author info in `data/authors/default.mdx`
 
 ---
 
@@ -68,10 +56,10 @@ Built with Next.js 15’s App Router, Tailwind CSS, MDX, and Contentlayer, it fe
 
 ### Site Metadata
 
-Edit `data/siteMetadata.ts`:
+Edit `data/siteMetadata.js`:
 
-```ts
-export const siteMetadata = {
+```js
+const siteMetadata = {
   title: 'Bryan Beltran',
   description: 'Software developer blog & portfolio',
   siteUrl: 'https://bryanbeltran.us',
@@ -101,24 +89,29 @@ interface Project {
   title: string
   description: string
   href?: string
+  status?: 'In Progress' | 'Launched' | 'Paused'
 }
 
 const projectsData: Project[] = [
   {
     title: 'SeedStarter',
-    description: 'A hyperlocal garden scheduler based on USDA zones and frost dates.',
-    href: 'https://github.com/bryanbeltran/seedstarter',
+    description:
+      'A garden planning tool that shows ideal planting windows based on your USDA zone and frost data.',
+    href: 'https://github.com/bryanbeltran/seed-starter',
+    status: 'In Progress',
   },
   {
-    title: 'ZipperMerge & Roundabout Simulator',
-    description: 'Backend simulation of traffic flow, modeling zipper merges and roundabouts.',
-    href: 'https://github.com/bryanbeltran/zipper-merge-simulator',
+    title: 'The Gathering Project',
+    description: 'Website for a nonprofit organization. Built with Next.js and hosted on Vercel.',
+    href: 'https://github.com/bryanbeltran/thegatheringproject.us',
+    status: 'Launched',
   },
   {
     title: 'Mitten Index',
     description:
-      'A cold-weather scoring app using local weather heuristics to recommend outdoor activity readiness.',
+      'A cold-weather readiness score that combines forecast data with heuristics to help you decide how bundled up to get.',
     href: 'https://github.com/bryanbeltran/mitten-index',
+    status: 'In Progress',
   },
 ]
 
@@ -127,7 +120,7 @@ export default projectsData
 
 ### Author Profile
 
-Edit `data/authors/default.md`:
+Edit `data/authors/default.mdx`:
 
 ```md
 ---
@@ -145,11 +138,31 @@ A full-stack dev focused on building tools for educators and data-driven applica
 
 ---
 
+## Environment Variables
+
+Create a `.env.local` file in the root directory with the following variables (see `.env.example` for reference):
+
+```bash
+# Analytics (optional)
+NEXT_UMAMI_ID=your_umami_website_id
+
+# Comments - Giscus (optional)
+NEXT_PUBLIC_GISCUS_REPO=your_username/your_repo
+NEXT_PUBLIC_GISCUS_REPOSITORY_ID=your_repository_id
+NEXT_PUBLIC_GISCUS_CATEGORY=your_category
+NEXT_PUBLIC_GISCUS_CATEGORY_ID=your_category_id
+
+# Base path (optional, for subdirectory deployments)
+BASE_PATH=
+```
+
+---
+
 ## Deployment
 
-When you’re ready:
+When you're ready:
 
-1. Set your production `siteUrl` in `data/siteMetadata.ts`
+1. Set your production `siteUrl` in `data/siteMetadata.js`
 2. Push your changes to GitHub
 3. Connect your repo to Vercel (or Netlify/GitHub Pages)
 4. Configure environment variables (for analytics, comments, newsletters, etc.)
@@ -162,11 +175,10 @@ When you’re ready:
 ```
 ├── app/                  # Next.js App Router pages & layouts
 ├── components/           # Reusable React components
-├── content/              # MDX blog posts
-│   └── blog/
-├── data/                 # Site data: metadata, authors, nav links, projects
+├── data/                 # Site data: metadata, authors, nav links, projects, blog posts
+│   └── blog/             # MDX blog posts
 ├── public/               # Static assets: images, favicons
-├── styles/               # Tailwind & CSS configs
+├── css/                  # Tailwind & CSS configs
 ├── contentlayer.config.ts
 ├── next.config.js
 └── README.md
@@ -182,11 +194,3 @@ Original work © Timothy Lin (timlrx) under MIT license.
 ---
 
 > Crafted with ❤ by Bryan Beltran. Feel free to explore the code, contribute, or get in touch!
-
-```
-
-```
-
-```
-
-```
