@@ -16,10 +16,9 @@ export default function Home() {
       <section className="scroll-mt-20 space-y-2 pt-8">
         <h2 className="text-2xl font-semibold tracking-tight">About</h2>
         <p className="text-muted-foreground leading-relaxed text-balance">
-          I'm a backend software engineer with 7 years of experience. I build software that enables
-          great customer experiences and performs at scale. My personal projects are currently in
-          development, but each is something that fills a need in my life or brings me joy while
-          allowing me to learn.
+          I'm a backend software engineer. I build software that enables great customer experiences
+          and performs at scale. My personal projects are currently in development, but each is
+          something that fills a need in my life or brings me joy while allowing me to learn.
         </p>
         <Link
           href="/about"
