@@ -4,7 +4,7 @@ import siteMetadata from '@/data/siteMetadata'
 export const dynamic = 'force-static'
 
 const handler = NewsletterAPI({
-  provider: siteMetadata.newsletter.provider as
+  provider: (siteMetadata.newsletter?.provider ?? 'buttondown') as
     | 'buttondown'
     | 'convertkit'
     | 'klaviyo'
