@@ -32,7 +32,11 @@ const Header = () => {
 
       <div className="flex items-center space-x-4 leading-5 sm:-mr-6 sm:space-x-6">
         {/* Exclude '/' since logo already links to Home */}
-        <div className="no-scrollbar hidden items-center gap-x-4 overflow-x-auto sm:flex sm:max-w-full md:max-w-2xl lg:max-w-4xl">
+        <nav
+          className="no-scrollbar hidden items-center gap-x-4 overflow-x-auto sm:flex sm:max-w-full md:max-w-2xl lg:max-w-4xl"
+          role="navigation"
+          aria-label="Main navigation"
+        >
           {headerNavLinks
             .filter((link) => link.href !== '/')
             .map((link) => (
@@ -44,7 +48,7 @@ const Header = () => {
                 {link.title}
               </Link>
             ))}
-        </div>
+        </nav>
         <SearchButton />
         <ThemeSwitch />
         <MobileNav />

@@ -11,6 +11,7 @@
 
 # testing
 /coverage
+/.vitest
 
 # next.js
 /.next/
@@ -51,6 +52,9 @@ yarn-error.log*
 
 # Auto-generated components file
 components.json
+
+# Notes and planning
+notes/
 
 # Ignore npm lockfile if using pnpm
 package-lock.json

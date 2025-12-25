@@ -60,8 +60,8 @@ Edit `data/siteMetadata.js`:
 
 ```js
 const siteMetadata = {
-  title: 'Bryan Beltran',
-  description: 'Software developer blog & portfolio',
+  title: 'bryanbeltran.us',
+  description: 'Personal blog, dev portfolio, and tool-building lab by Bryan Beltran.',
   siteUrl: 'https://bryanbeltran.us',
   author: 'Bryan Beltran',
   // ...social links, analytics, comment, newsletter config
@@ -126,14 +126,14 @@ Edit `data/authors/default.mdx`:
 ---
 name: 'Bryan Beltran'
 avatar: '/static/images/avatar.png'
-occupation: 'Backend Software Developer'
-company: 'My Company'
+occupation: 'Software Developer'
+company: 'Chewy.com'
 email: 'bryan.beltran@mnsu.edu'
 github: 'bryanbeltran'
 linkedin: 'bryan-beltran'
 ---
 
-A full-stack dev focused on building tools for educators and data-driven applications.
+I'm a backend software developer building systems that support large-scale customer care operations.
 ```
 
 ---
