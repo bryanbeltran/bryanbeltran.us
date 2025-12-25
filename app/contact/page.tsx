@@ -12,9 +12,8 @@ export default function Contact() {
           Contact Me
         </h1>
         <p className="text-lg text-gray-600 dark:text-gray-400">
-          Let's build something impactful together. I specialize in backend development, but I am
-          always open to opportunities learn something new or to collaborate on projects that are
-          meaningful and impactful.
+          I specialize in backend development, but I'm always open to opportunities to learn
+          something new or collaborate on projects that matter.
         </p>
       </div>
 
