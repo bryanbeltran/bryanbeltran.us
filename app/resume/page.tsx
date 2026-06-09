@@ -45,7 +45,7 @@ export default function ResumePage() {
       <section className="mb-10">
         <h2 className="mb-4 text-xl font-semibold">Projects</h2>
         <p className="text-muted-foreground mb-4 text-sm">
-          Personal projects in progress. Details and source code available at{' '}
+          Personal and side projects. Details and source code available at{' '}
           <a
             href="https://bryanbeltran.us/projects"
             target="_blank"
