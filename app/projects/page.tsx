@@ -13,8 +13,8 @@ export default function Projects() {
           My Projects
         </h1>
         <p className="text-lg text-gray-600 dark:text-gray-400">
-          A showcase of my side projects and experiments in web development, data visualization, and
-          simulation.
+          Side projects and experiments in web development, backend tooling, and developer
+          utilities.
         </p>
       </div>
 
