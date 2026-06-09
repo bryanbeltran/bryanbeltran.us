@@ -29,6 +29,12 @@ public/sitemap.xml
 # search
 /public/search.json
 
+# Contentlayer generated (built during dev/build)
+/app/tag-data.json
+
+# TypeScript
+tsconfig.tsbuildinfo
+
 # misc
 .DS_Store
 
@@ -49,6 +55,7 @@ yarn-error.log*
 
 # IDE settings
 .vscode/
+.cursor/
 
 # Auto-generated components file
 components.json

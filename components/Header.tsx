@@ -7,7 +7,7 @@ import ThemeSwitch from './ThemeSwitch'
 import SearchButton from './SearchButton'
 
 const Header = () => {
-  let headerClass = 'flex items-center w-full bg-white dark:bg-gray-950 justify-between py-10'
+  let headerClass = 'flex items-center w-full bg-background justify-between py-10'
   if (siteMetadata.stickyNav) {
     headerClass += ' sticky top-0 z-50'
   }
@@ -30,7 +30,7 @@ const Header = () => {
         </div>
       </Link>
 
-      <div className="flex items-center space-x-4 leading-5 sm:-mr-6 sm:space-x-6">
+      <div className="relative z-[100] flex items-center space-x-4 leading-5 sm:-mr-6 sm:space-x-6">
         {/* Exclude '/' since logo already links to Home */}
         <nav
           className="no-scrollbar hidden items-center gap-x-4 overflow-x-auto sm:flex sm:max-w-full md:max-w-2xl lg:max-w-4xl"
@@ -43,7 +43,7 @@ const Header = () => {
               <Link
                 key={link.title}
                 href={link.href}
-                className="hover:text-primary-500 dark:hover:text-primary-400 m-1 font-medium text-gray-900 dark:text-gray-100"
+                className="hover:text-primary-500 dark:hover:text-primary-400 text-foreground m-1 font-medium"
               >
                 {link.title}
               </Link>

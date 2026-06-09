@@ -1,0 +1,44 @@
+'use client'
+
+import { useEffect } from 'react'
+import Link from '@/components/Link'
+
+export default function Error({
+  error,
+  reset,
+}: {
+  error: Error & { digest?: string }
+  reset: () => void
+}) {
+  useEffect(() => {
+    console.error(error)
+  }, [error])
+
+  return (
+    <div className="flex flex-col items-start justify-start md:mt-24 md:flex-row md:items-center md:justify-center md:space-x-6">
+      <div className="space-x-2 pt-6 pb-8 md:space-y-5">
+        <h1 className="text-6xl leading-9 font-extrabold tracking-tight text-gray-900 md:border-r-2 md:px-6 md:text-8xl md:leading-14 dark:text-gray-100">
+          Error
+        </h1>
+      </div>
+      <div className="max-w-md space-y-4">
+        <p className="text-xl leading-normal font-bold md:text-2xl">Something went wrong.</p>
+        <div className="flex gap-4">
+          <button
+            type="button"
+            onClick={reset}
+            className="focus:shadow-outline-blue inline rounded-lg border border-transparent bg-blue-600 px-4 py-2 text-sm leading-5 font-medium text-white shadow-xs transition-colors duration-150 hover:bg-blue-700 focus:outline-hidden dark:hover:bg-blue-500"
+          >
+            Try again
+          </button>
+          <Link
+            href="/"
+            className="focus:shadow-outline-blue inline rounded-lg border border-gray-300 px-4 py-2 text-sm leading-5 font-medium text-gray-700 transition-colors duration-150 hover:bg-gray-100 focus:outline-hidden dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-800"
+          >
+            Home
+          </Link>
+        </div>
+      </div>
+    </div>
+  )
+}

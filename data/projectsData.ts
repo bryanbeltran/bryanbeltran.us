@@ -16,17 +16,24 @@ const projectsData: Project[] = [
     status: 'In Progress',
   },
   {
+    title: 'GovDataHub',
+    description:
+      'A project for collecting, organizing, and exploring government data in one place.',
+    href: 'https://github.com/bryanbeltran/govdatahub',
+    status: 'In Progress',
+  },
+  {
+    title: 'Browser Listener',
+    description:
+      'A browser listener utility for observing page activity and experimenting with browser events.',
+    href: 'https://github.com/bryanbeltran/browser-listener',
+    status: 'In Progress',
+  },
+  {
     title: 'The Gathering Project',
     description: 'Website for a nonprofit organization. Built with Next.js and hosted on Vercel.',
     href: 'https://github.com/bryanbeltran/thegatheringproject.us',
     status: 'Launched',
-  },
-  {
-    title: 'Mitten Index',
-    description:
-      'A cold-weather readiness score that combines forecast data with heuristics to help you decide how bundled up to get.',
-    href: 'https://github.com/bryanbeltran/mitten-index',
-    status: 'In Progress',
   },
 ]
 

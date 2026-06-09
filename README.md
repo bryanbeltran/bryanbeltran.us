@@ -26,20 +26,17 @@ Built with Next.js 15's App Router, Tailwind CSS, MDX, and Contentlayer, it feat
    cd bryanbeltran.us
    ```
 
-2. **Install dependencies**
+2. **Install dependencies** (requires [pnpm](https://pnpm.io/) 9 via Corepack)
 
    ```bash
-   npm install
-   # or
-   yarn install
+   corepack enable
+   pnpm install --frozen-lockfile
    ```
 
 3. **Run the development server**
 
    ```bash
-   npm run dev
-   # or
-   yarn dev
+   pnpm dev
    ```
 
    Open [http://localhost:3000](http://localhost:3000) to view.
@@ -160,13 +157,17 @@ BASE_PATH=
 
 ## Deployment
 
-When you're ready:
+Deploys to **[Vercel](https://vercel.com)** on push to `main`.
 
-1. Set your production `siteUrl` in `data/siteMetadata.js`
-2. Push your changes to GitHub
-3. Connect your repo to Vercel (or Netlify/GitHub Pages)
-4. Configure environment variables (for analytics, comments, newsletters, etc.)
-5. Trigger a deploy — your site will be live at your custom domain
+1. Import the repo in Vercel (or connect via the GitHub integration)
+2. Set **Framework Preset** to Next.js and **Package Manager** to pnpm
+3. Build command: `pnpm build` (default)
+4. Add environment variables from `.env.example` in the Vercel dashboard
+5. Set your custom domain (`bryanbeltran.us`) in Vercel → Project Settings → Domains
+
+**Newsletter:** Disabled by default (`newsletter.provider` is empty). To enable on Vercel, set a provider in `data/siteMetadata.js`, add `BUTTONDOWN_API_KEY` in Vercel env vars, and restore `app/api/newsletter/route.ts`.
+
+**Generated files:** `app/tag-data.json` and `public/search.json` are produced by Contentlayer during `pnpm dev` / `pnpm build` and are not committed.
 
 ---
 

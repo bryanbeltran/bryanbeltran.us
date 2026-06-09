@@ -1,142 +1,102 @@
-import { Card, CardContent, CardTitle } from '@/components/ui/card'
-import Link from 'next/link'
+import Link from '@/components/Link'
+import Card from '@/components/Card'
+import projectsData from '@/data/projectsData'
+import { allBlogs } from 'contentlayer/generated'
+import { sortPosts } from 'pliny/utils/contentlayer'
+import { filterPublishedPosts } from '@/lib/blog'
+
+function formatProjectStatus(status?: string) {
+  if (!status) return null
+  if (status === 'In Progress') return 'In development – GitHub only'
+  if (status === 'Launched') return 'Launched'
+  return status
+}
 
 export default function Home() {
+  const latestPost = sortPosts(filterPublishedPosts(allBlogs))[0]
+
   return (
-    <main className="mx-auto max-w-4xl space-y-24 px-4 py-12">
-      {/* Hero Section */}
-      <section className="mx-auto max-w-xl scroll-mt-20 space-y-2 text-center">
-        <h1 className="text-4xl font-bold tracking-tight">Bryan Beltran</h1>
-        <p className="text-muted-foreground text-base leading-relaxed text-balance">
+    <div className="divide-y divide-gray-200 dark:divide-gray-700">
+      <section className="space-y-2 pt-6 pb-8 text-center md:space-y-5">
+        <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl md:text-5xl dark:text-gray-100">
+          Bryan Beltran
+        </h1>
+        <p className="text-lg text-gray-600 dark:text-gray-400">
           Backend Engineer — building tools for personal use.
         </p>
       </section>
 
-      {/* About Preview */}
-      <section className="scroll-mt-20 space-y-2 pt-8">
-        <h2 className="text-2xl font-semibold tracking-tight">About</h2>
-        <p className="text-muted-foreground leading-relaxed text-balance">
-          I'm a backend software engineer. I build software that enables great customer experiences
-          and performs at scale. My personal projects are currently in development, but each is
-          something that fills a need in my life or brings me joy while allowing me to learn.
+      <section className="space-y-2 py-8 md:py-10">
+        <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-100">
+          About
+        </h2>
+        <p className="leading-relaxed text-gray-600 dark:text-gray-400">
+          I build software that enables great customer experiences and performs at scale. My
+          personal projects are currently in development, but each is something that fills a need in
+          my life or brings me joy while allowing me to learn.
         </p>
         <Link
           href="/about"
-          className="text-primary font-medium underline underline-offset-4 hover:opacity-90"
+          className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 text-base font-medium"
         >
-          More about me →
+          More about me &rarr;
         </Link>
       </section>
 
-      {/* Projects Section */}
-      <section className="scroll-mt-20 space-y-6 pt-8">
-        <h2 className="text-2xl font-semibold tracking-tight">What I’m Building</h2>
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-          <Card className="bg-muted/40 ring-border hover:ring-primary rounded-xl shadow-sm ring-1 transition hover:ring-2">
-            <CardContent className="flex h-full flex-col space-y-2 p-4">
-              <CardTitle className="leading-snug">SeedStarter</CardTitle>
-              <p className="text-muted-foreground text-sm leading-relaxed text-balance">
-                A garden planning tool that shows ideal planting windows based on your USDA zone and
-                frost data. Built for backyard growers who want timing they can trust.
-              </p>
-              <p className="text-muted-foreground text-xs">In development – GitHub only</p>
-              <Link
-                href="https://github.com/bryanbeltran/seed-starter"
-                className="text-primary mt-auto text-sm hover:underline"
-              >
-                View on GitHub
-              </Link>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-muted/40 ring-border hover:ring-primary rounded-xl shadow-sm ring-1 transition hover:ring-2">
-            <CardContent className="flex h-full flex-col space-y-2 p-4">
-              <CardTitle className="leading-snug">The Gathering Project</CardTitle>
-              <p className="text-muted-foreground text-sm leading-relaxed text-balance">
-                Website for a nonprofit organization built with Next.js.
-              </p>
-              <p className="text-muted-foreground text-xs">Launched</p>
-              <Link
-                href="https://github.com/bryanbeltran/thegatheringproject.us"
-                className="text-primary mt-auto text-sm hover:underline"
-              >
-                View on GitHub
-              </Link>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-muted/40 ring-border hover:ring-primary rounded-xl shadow-sm ring-1 transition hover:ring-2">
-            <CardContent className="flex h-full flex-col space-y-2 p-4">
-              <CardTitle className="leading-snug">Mitten Index</CardTitle>
-              <p className="text-muted-foreground text-sm leading-relaxed text-balance">
-                A cold-weather readiness score that combines forecast data with heuristics to help
-                you decide how bundled up to get.
-              </p>
-              <p className="text-muted-foreground text-xs">In development – GitHub only</p>
-              <Link
-                href="https://github.com/bryanbeltran/mitten-index"
-                className="text-primary mt-auto text-sm hover:underline"
-              >
-                View on GitHub
-              </Link>
-            </CardContent>
-          </Card>
+      <section className="py-8 md:py-10">
+        <h2 className="mb-6 text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-100">
+          What I’m Building
+        </h2>
+        <div className="-m-4 flex flex-wrap">
+          {projectsData.map(({ title, description, href, status }) => (
+            <Card
+              key={title}
+              title={title}
+              description={description}
+              href={href}
+              status={formatProjectStatus(status) ?? undefined}
+            />
+          ))}
         </div>
         <Link
           href="/projects"
-          className="text-primary font-medium underline underline-offset-4 hover:opacity-90"
+          className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 mt-4 inline-block text-base font-medium"
         >
-          See all projects →
+          See all projects &rarr;
         </Link>
       </section>
 
-      {/* Blog Teaser */}
-      <section className="scroll-mt-20 space-y-4 pt-8">
-        <h2 className="text-2xl font-semibold tracking-tight">From the Blog</h2>
-        <p className="text-muted-foreground leading-relaxed text-balance">
+      <section className="space-y-4 py-8 md:py-10">
+        <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-100">
+          From the Blog
+        </h2>
+        <p className="text-gray-600 dark:text-gray-400">
           Notes on tools I'm building and exploring.
         </p>
 
-        <div className="space-y-2">
-          <div>
-            <h3 className="text-lg font-medium">
+        {latestPost && (
+          <div className="space-y-2">
+            <h3 className="text-lg font-semibold">
               <Link
-                href="/blog/seedstarter-garden-planner"
-                className="text-primary underline underline-offset-4 hover:opacity-90"
+                href={`/blog/${latestPost.slug}`}
+                className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
               >
-                Planning Gardens with Zone-Aware Scheduling
+                {latestPost.title}
               </Link>
             </h3>
-            <p className="text-muted-foreground text-sm text-balance">
-              Behind the scenes of SeedStarter — syncing planting tasks to frost dates with USDA
-              zones.
-            </p>
+            {latestPost.summary && (
+              <p className="text-gray-600 dark:text-gray-400">{latestPost.summary}</p>
+            )}
           </div>
-        </div>
+        )}
 
         <Link
           href="/blog"
-          className="text-primary font-medium underline underline-offset-4 hover:opacity-90"
+          className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 inline-block text-base font-medium"
         >
-          Visit Blog →
+          Visit Blog &rarr;
         </Link>
       </section>
-
-      {/* Footer */}
-      <footer className="text-muted-foreground border-t pt-16 text-center text-sm">
-        <p>© {new Date().getFullYear()} Bryan Beltran</p>
-        <div className="mt-2 flex justify-center gap-4">
-          <Link href="mailto:bryan.beltran@mnsu.edu" className="hover:underline">
-            Email
-          </Link>
-          <Link href="https://github.com/bryanbeltran" className="hover:underline">
-            GitHub
-          </Link>
-          <Link href="/about" className="hover:underline">
-            About
-          </Link>
-        </div>
-      </footer>
-    </main>
+    </div>
   )
 }
