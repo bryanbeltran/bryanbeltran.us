@@ -1,0 +1,49 @@
+---
+title: 'Starting GovDataHub — Collecting Public Data in One Place'
+date: '2026-06-01'
+summary: 'Early notes on GovDataHub, a side project to collect, organize, and explore government datasets without jumping between dozens of portals.'
+tags: ['govdatahub', 'tools', 'opensource']
+draft: false
+---
+
+Government data is public. Finding it in a form you can actually use is another story.
+
+I started [GovDataHub](https://github.com/bryanbeltran/govdatahub) because I kept hitting the same friction: interesting datasets scattered across federal agencies, inconsistent formats, and no single place to bookmark what I had already explored.
+
+This is a dev log, not a launch announcement. The project is in progress.
+
+## The problem I am solving
+
+When I research a topic — housing, transit, agriculture, whatever — I end up with:
+
+- A dozen browser tabs across `.gov` domains
+- CSV downloads with incompatible schemas
+- No memory of which dataset I already evaluated and rejected
+
+GovDataHub is my attempt to build a personal index: sources I care about, metadata that helps me compare them, and a path toward exploration without starting from zero each time.
+
+## Design constraints
+
+Personal tool rules apply:
+
+- **Start small** — One domain I actually research beats a generic crawler for everything
+- **Provenance matters** — Every dataset needs source URL, retrieval date, and license notes
+- **Boring storage first** — SQLite or Postgres before anything clever
+
+I am not trying to replace Data.gov. I want a workspace that respects how individual developers and researchers actually work.
+
+## Technical direction
+
+Stack is still settling. Likely Python for ingestion scripts, a simple API layer, and a frontend when the data model stops changing every week.
+
+Early milestones:
+
+1. Catalog schema (source, title, format, update cadence)
+2. One end-to-end ingest pipeline for a single agency feed
+3. Search and filter over what has been collected
+
+## Related work on this site
+
+GovDataHub sits alongside other [side projects](/projects) — SeedStarter for gardening, Browser Listener for page instrumentation experiments. Each solves a narrow problem I have repeatedly.
+
+I will post updates as the catalog and ingestion pieces land. If public data organization is your kind of rabbit hole, the repo is on GitHub.

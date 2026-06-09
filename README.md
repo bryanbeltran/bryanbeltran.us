@@ -13,7 +13,8 @@ Built with Next.js 15's App Router, Tailwind CSS, MDX, and Contentlayer, it feat
 - **Author profile** configured in `data/authors/default.mdx`
 - **Custom navigation** in `data/headerNavLinks.ts`
 - **SEO-ready** with RSS feed, sitemap, and built-in metadata helpers
-- **Optional integrations**: analytics (Umami, Plausible, GA), comments (Giscus, Disqus), newsletter (Mailchimp, Beehiiv), search (Kbar, Algolia)
+- **Optional integrations**: comments (Giscus), newsletter (Buttondown), search (Kbar)
+- **Analytics**: [Vercel Analytics](https://vercel.com/docs/analytics) (built-in, no env vars)
 
 ---
 
@@ -61,7 +62,7 @@ const siteMetadata = {
   description: 'Personal blog, dev portfolio, and tool-building lab by Bryan Beltran.',
   siteUrl: 'https://bryanbeltran.us',
   author: 'Bryan Beltran',
-  // ...social links, analytics, comment, newsletter config
+  // ...social links, comment, newsletter config
 }
 ```
 
@@ -140,9 +141,6 @@ I'm a backend software developer building systems that support large-scale custo
 Create a `.env.local` file in the root directory with the following variables (see `.env.example` for reference):
 
 ```bash
-# Analytics (optional)
-NEXT_UMAMI_ID=your_umami_website_id
-
 # Comments - Giscus (optional)
 NEXT_PUBLIC_GISCUS_REPO=your_username/your_repo
 NEXT_PUBLIC_GISCUS_REPOSITORY_ID=your_repository_id
@@ -168,6 +166,27 @@ Deploys to **[Vercel](https://vercel.com)** on push to `main`.
 **Newsletter:** Disabled by default (`newsletter.provider` is empty). To enable on Vercel, set a provider in `data/siteMetadata.js`, add `BUTTONDOWN_API_KEY` in Vercel env vars, and restore `app/api/newsletter/route.ts`.
 
 **Generated files:** `app/tag-data.json` and `public/search.json` are produced by Contentlayer during `pnpm dev` / `pnpm build` and are not committed.
+
+---
+
+## SEO & Analytics
+
+### Google Search Console
+
+1. Add `https://bryanbeltran.us` at [Google Search Console](https://search.google.com/search-console)
+2. Verify via DNS (recommended on Vercel) or HTML tag
+3. Submit sitemap: `https://bryanbeltran.us/sitemap.xml`
+4. Re-run `/seo-analysis` after data accumulates (~3 days) for query-level recommendations
+
+### Vercel Analytics
+
+Analytics is integrated via `@vercel/analytics` in `app/layout.tsx`. No env vars required.
+
+1. Open your project in the [Vercel dashboard](https://vercel.com)
+2. Go to **Analytics** and enable it for the project
+3. Deploy to production — page views appear in the Analytics tab
+
+Optional Giscus comment vars are listed in `.env.example`.
 
 ---
 

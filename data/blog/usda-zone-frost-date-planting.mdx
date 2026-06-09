@@ -1,0 +1,51 @@
+---
+title: 'USDA Zones, Frost Dates, and When to Actually Start Seeds'
+date: '2026-05-28'
+summary: 'A practical guide to using your USDA hardiness zone and last-frost date to plan indoor seed starts and transplant windows.'
+tags: ['gardening', 'seedstarter', 'tools']
+draft: false
+---
+
+If you garden in a cold climate, timing is everything. Start tomatoes too early and you get leggy seedlings fighting your windowsill. Start too late and you miss the harvest window entirely.
+
+USDA hardiness zones and frost dates are the foundation for getting that timing right. This is the mental model behind [SeedStarter](/projects) and the problem I keep solving for myself every spring.
+
+## USDA zones tell you the climate envelope
+
+A USDA zone (e.g. 4b, 5a) reflects the average annual extreme minimum temperature for your area. It is not a planting calendar by itself — but it narrows which perennials survive winter and which annuals are realistic.
+
+For scheduling, zone data is most useful when paired with **local frost dates**.
+
+## Frost dates drive the calendar
+
+Two dates matter for most backyard growers:
+
+- **Last frost date (spring)** — when you can reasonably transplant tender crops outdoors
+- **First frost date (fall)** — when the season ends for heat-loving plants
+
+Seed packets often say "start indoors 6–8 weeks before last frost." That only helps if you know your last frost date.
+
+National maps are a starting point. Microclimates matter — urban heat islands, south-facing beds, and wind exposure can shift reality by a week or two.
+
+## From dates to tasks
+
+Once you have zone + frost dates, planning becomes a set of offsets:
+
+1. Pick a crop
+2. Look up indoor start offset (weeks before last frost)
+3. Look up transplant date (after last frost, sometimes with a hardening-off buffer)
+4. Put it on a calendar you will actually check
+
+That last step is why SeedStarter exports `.ics` files. I do not want 15 manual reminders every February.
+
+## Common mistakes
+
+- **Using zone alone** — Zone 5 in Minnesota and Zone 5 in Colorado are not the same growing experience.
+- **Ignoring soil temperature** — Air frost dates and soil readiness diverge, especially for direct-sown crops.
+- **One reminder per plant** — You need start, harden-off, transplant, and sometimes succession plantings.
+
+## Where I am taking SeedStarter next
+
+The [SeedStarter dev log](/blog/seedstarter-garden-planner) covers shapefile matching and zip-code geocoding. The open problems — boundary zones, microclimates, performance of client-side polygon queries — are still active.
+
+If you are planning a garden this year, start with your last frost date. Everything else gets easier from there.

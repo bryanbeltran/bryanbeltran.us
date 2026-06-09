@@ -2,12 +2,12 @@ import siteMetadata from '@/data/siteMetadata'
 
 const sameAs = [siteMetadata.github, siteMetadata.linkedin].filter(Boolean)
 
-export function personJsonLd() {
+export function personJsonLd(pageUrl = siteMetadata.siteUrl) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: siteMetadata.author,
-    url: siteMetadata.siteUrl,
+    url: pageUrl,
     email: siteMetadata.email,
     jobTitle: 'Backend Software Engineer',
     worksFor: { '@type': 'Organization', name: 'Chewy' },

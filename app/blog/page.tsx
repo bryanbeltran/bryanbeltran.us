@@ -9,7 +9,7 @@ const POSTS_PER_PAGE = 5
 export const metadata = genPageMetadata({
   title: 'Writing About Building Things',
   description:
-    "Notes on tools I'm building and exploring — backend architecture, side projects, and experiments.",
+    'Notes on tools I am building and exploring — backend architecture, side projects, and experiments.',
 })
 
 export default async function BlogPage() {

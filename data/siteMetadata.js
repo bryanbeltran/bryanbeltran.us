@@ -22,11 +22,6 @@ const siteMetadata = {
   bluesky: '',
   locale: 'en-US',
   stickyNav: false,
-  analytics: {
-    umamiAnalytics: {
-      umamiWebsiteId: process.env.NEXT_UMAMI_ID,
-    },
-  },
   // Newsletter disabled by default. On Vercel, set provider (e.g. 'buttondown') and restore app/api/newsletter/route.ts.
   newsletter: {
     provider: '',

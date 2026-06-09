@@ -2,8 +2,7 @@ import 'css/tailwind.css'
 import 'pliny/search/algolia.css'
 import 'remark-github-blockquote-alert/alert.css'
 
-import { Analytics, AnalyticsConfig } from 'pliny/analytics'
-import { Analytics as VercelAnalytics } from '@vercel/analytics/next'
+import { Analytics } from '@vercel/analytics/next'
 import { SearchProvider, SearchConfig } from 'pliny/search'
 import Header from '@/components/Header'
 import SectionContainer from '@/components/SectionContainer'
@@ -87,7 +86,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang={siteMetadata.language} className="scroll-smooth" suppressHydrationWarning>
       <body className="bg-background text-foreground pl-[calc(100vw-100%)] antialiased">
         <ThemeProviders>
-          <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
           <SectionContainer>
             <SearchProvider searchConfig={siteMetadata.search as SearchConfig}>
               <Header />
@@ -96,7 +94,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Footer />
           </SectionContainer>
         </ThemeProviders>
-        <VercelAnalytics />
+        <Analytics />
       </body>
     </html>
   )
