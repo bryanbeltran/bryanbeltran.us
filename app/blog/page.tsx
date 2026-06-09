@@ -6,7 +6,11 @@ import { filterPublishedPosts } from '@/lib/blog'
 
 const POSTS_PER_PAGE = 5
 
-export const metadata = genPageMetadata({ title: 'Blog' })
+export const metadata = genPageMetadata({
+  title: 'Writing About Building Things',
+  description:
+    "Notes on tools I'm building and exploring — backend architecture, side projects, and experiments.",
+})
 
 export default async function BlogPage() {
   const posts = allCoreContent(sortPosts(filterPublishedPosts(allBlogs)))

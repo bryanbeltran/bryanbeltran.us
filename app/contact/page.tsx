@@ -2,7 +2,11 @@ import { genPageMetadata } from 'app/seo'
 import { Metadata } from 'next'
 import siteMetadata from '@/data/siteMetadata'
 
-export const metadata: Metadata = genPageMetadata({ title: 'Contact | Bryan Beltran' })
+export const metadata: Metadata = genPageMetadata({
+  title: 'Contact',
+  description:
+    'Get in touch with Bryan Beltran — email, LinkedIn, and GitHub. Open to collaboration and new opportunities.',
+})
 
 export default function Contact() {
   return (

@@ -3,7 +3,11 @@ import Card from '@/components/Card'
 import { genPageMetadata } from 'app/seo'
 import { Metadata } from 'next'
 
-export const metadata: Metadata = genPageMetadata({ title: 'Projects | Bryan Beltran' })
+export const metadata: Metadata = genPageMetadata({
+  title: 'Projects',
+  description:
+    'Side projects in web development, backend tooling, and developer utilities by Bryan Beltran.',
+})
 
 export default function Projects() {
   return (
