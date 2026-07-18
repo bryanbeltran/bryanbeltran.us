@@ -10,13 +10,13 @@ import { filterPublishedPosts } from '@/lib/blog'
 import { personJsonLd, webSiteJsonLd } from '@/lib/jsonLd'
 
 const homeDescription =
-  'Portfolio, resume, and writing by Bryan Beltran. Backend engineer building tools, side projects, and technical notes.'
+  'Portfolio, resume, and writing by Bryan Beltrán. Backend engineer building tools, side projects, and technical notes.'
 
 export const metadata: Metadata = {
-  title: { absolute: 'Bryan Beltran — Backend Software Engineer' },
+  title: { absolute: 'Bryan Beltrán — Backend Software Engineer' },
   description: homeDescription,
   openGraph: {
-    title: 'Bryan Beltran — Backend Software Engineer',
+    title: 'Bryan Beltrán — Backend Software Engineer',
     description: homeDescription,
     url: siteMetadata.siteUrl,
     siteName: siteMetadata.title,
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Bryan Beltran — Backend Software Engineer',
+    title: 'Bryan Beltrán — Backend Software Engineer',
     description: homeDescription,
     images: [siteMetadata.socialBanner],
   },
@@ -49,7 +49,7 @@ export default function Home() {
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <section className="space-y-2 pt-6 pb-8 text-center md:space-y-5">
           <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl md:text-5xl dark:text-gray-100">
-            Bryan Beltran
+            Bryan Beltrán
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-400">
             Backend Engineer — building tools for personal use.

@@ -6,7 +6,7 @@ import { Metadata } from 'next'
 export const metadata: Metadata = genPageMetadata({
   title: 'Projects',
   description:
-    'Side projects in web development, backend tooling, and developer utilities by Bryan Beltran.',
+    'Side projects in web development, backend tooling, and developer utilities by Bryan Beltrán.',
 })
 
 export default function Projects() {
