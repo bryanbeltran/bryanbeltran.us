@@ -3,7 +3,8 @@ const siteMetadata = {
   title: 'bryanbeltran.us',
   author: 'Bryan Beltrán',
   headerTitle: 'bryanbeltran.us',
-  description: 'Personal blog, dev portfolio, and tool-building lab by Bryan Beltrán.',
+  description:
+    'Portfolio, resume, and writing by Bryan Beltrán. Backend engineer building tools, side projects, and technical notes.',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://bryanbeltran.us',

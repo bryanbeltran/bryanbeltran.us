@@ -59,7 +59,8 @@ Edit `data/siteMetadata.js`:
 ```js
 const siteMetadata = {
   title: 'bryanbeltran.us',
-  description: 'Personal blog, dev portfolio, and tool-building lab by Bryan Beltrán.',
+  description:
+    'Portfolio, resume, and writing by Bryan Beltrán. Backend engineer building tools, side projects, and technical notes.',
   siteUrl: 'https://bryanbeltran.us',
   author: 'Bryan Beltrán',
   // ...social links, comment, newsletter config

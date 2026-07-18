@@ -8,7 +8,7 @@ const resumeDescription =
   'Resume of Bryan Beltrán — Software Engineer II at Chewy. AWS, event-driven systems, observability, and backend tooling. Open to remote roles.'
 
 export const metadata: Metadata = {
-  title: 'Resume | Bryan Beltrán',
+  title: { absolute: 'Resume | Bryan Beltrán' },
   description: resumeDescription,
 }
 
