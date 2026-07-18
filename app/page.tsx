@@ -9,15 +9,12 @@ import { sortPosts } from 'pliny/utils/contentlayer'
 import { filterPublishedPosts } from '@/lib/blog'
 import { personJsonLd, webSiteJsonLd } from '@/lib/jsonLd'
 
-const homeDescription =
-  'Portfolio, resume, and writing by Bryan Beltrán. Backend engineer building tools, side projects, and technical notes.'
-
 export const metadata: Metadata = {
   title: { absolute: 'Bryan Beltrán — Backend Software Engineer' },
-  description: homeDescription,
+  description: siteMetadata.description,
   openGraph: {
     title: 'Bryan Beltrán — Backend Software Engineer',
-    description: homeDescription,
+    description: siteMetadata.description,
     url: siteMetadata.siteUrl,
     siteName: siteMetadata.title,
     images: [siteMetadata.socialBanner],
@@ -27,7 +24,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Bryan Beltrán — Backend Software Engineer',
-    description: homeDescription,
+    description: siteMetadata.description,
     images: [siteMetadata.socialBanner],
   },
 }
