@@ -6,11 +6,21 @@ import { genPageMetadata } from 'app/seo'
 import JsonLd from '@/components/JsonLd'
 import { profilePageJsonLd } from '@/lib/jsonLd'
 
-export const metadata = genPageMetadata({
-  title: 'About',
-  description:
-    'About Bryan Beltran — backend software engineer building scalable customer care systems at Chewy and personal tools on the side.',
+const aboutTitle = 'Bryan Beltran — Backend Engineer at Chewy | About'
+const aboutDescription =
+  'About Bryan Beltran — backend software engineer building scalable customer care systems at Chewy and personal tools on the side.'
+
+const base = genPageMetadata({
+  title: aboutTitle,
+  description: aboutDescription,
 })
+
+export const metadata = {
+  ...base,
+  title: { absolute: aboutTitle },
+  openGraph: { ...base.openGraph, title: aboutTitle },
+  twitter: { ...base.twitter, title: aboutTitle },
+}
 
 export default function Page() {
   const author = allAuthors.find((p) => p.slug === 'default') as Authors

@@ -49,12 +49,13 @@ export async function generateMetadata(props: {
       url: img && img.includes('http') ? img : siteMetadata.siteUrl + img,
     }
   })
+  const metaTitle = post.seoTitle || post.title
 
   return {
-    title: post.title,
+    title: metaTitle,
     description: post.summary,
     openGraph: {
-      title: post.title,
+      title: metaTitle,
       description: post.summary,
       siteName: siteMetadata.title,
       locale: 'en_US',
@@ -67,7 +68,7 @@ export async function generateMetadata(props: {
     },
     twitter: {
       card: 'summary_large_image',
-      title: post.title,
+      title: metaTitle,
       description: post.summary,
       images: ogImages,
     },
