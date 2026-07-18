@@ -1,9 +1,9 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
   title: 'bryanbeltran.us',
-  author: 'Bryan Beltran',
+  author: 'Bryan Beltrán',
   headerTitle: 'bryanbeltran.us',
-  description: 'Personal blog, dev portfolio, and tool-building lab by Bryan Beltran.',
+  description: 'Personal blog, dev portfolio, and tool-building lab by Bryan Beltrán.',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://bryanbeltran.us',

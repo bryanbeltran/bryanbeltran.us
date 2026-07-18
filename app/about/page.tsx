@@ -6,9 +6,9 @@ import { genPageMetadata } from 'app/seo'
 import JsonLd from '@/components/JsonLd'
 import { profilePageJsonLd } from '@/lib/jsonLd'
 
-const aboutTitle = 'Bryan Beltran — Backend Engineer at Chewy | About'
+const aboutTitle = 'Bryan Beltrán — Backend Engineer at Chewy | About'
 const aboutDescription =
-  'About Bryan Beltran — backend software engineer building scalable customer care systems at Chewy and personal tools on the side.'
+  'About Bryan Beltrán — backend software engineer building scalable customer care systems at Chewy and personal tools on the side.'
 
 const base = genPageMetadata({
   title: aboutTitle,

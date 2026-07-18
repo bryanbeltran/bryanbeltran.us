@@ -5,7 +5,7 @@ import siteMetadata from '@/data/siteMetadata'
 export const metadata: Metadata = genPageMetadata({
   title: 'Contact',
   description:
-    'Get in touch with Bryan Beltran — email, LinkedIn, and GitHub. Open to collaboration and new opportunities.',
+    'Get in touch with Bryan Beltrán — email, LinkedIn, and GitHub. Open to collaboration and new opportunities.',
 })
 
 export default function Contact() {
@@ -26,7 +26,7 @@ export default function Contact() {
           <a
             href={`mailto:${siteMetadata.email}`}
             className="bg-primary-600 hover:bg-primary-700 focus:ring-primary-400 dark:bg-primary-500 dark:hover:bg-primary-400 dark:focus:ring-primary-300 inline-block rounded px-5 py-2 font-semibold text-white shadow transition focus:ring-2 focus:ring-offset-2 focus:outline-none"
-            aria-label="Email Bryan Beltran"
+            aria-label="Email Bryan Beltrán"
           >
             Email Me
           </a>

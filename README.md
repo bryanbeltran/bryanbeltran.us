@@ -1,4 +1,4 @@
-# Bryan Beltran's Personal Blog & Portfolio
+# Bryan Beltrán's Personal Blog & Portfolio
 
 > **Forked from** [timlrx/tailwind-nextjs-starter-blog](https://github.com/timlrx/tailwind-nextjs-starter-blog)
 
@@ -59,9 +59,9 @@ Edit `data/siteMetadata.js`:
 ```js
 const siteMetadata = {
   title: 'bryanbeltran.us',
-  description: 'Personal blog, dev portfolio, and tool-building lab by Bryan Beltran.',
+  description: 'Personal blog, dev portfolio, and tool-building lab by Bryan Beltrán.',
   siteUrl: 'https://bryanbeltran.us',
-  author: 'Bryan Beltran',
+  author: 'Bryan Beltrán',
   // ...social links, comment, newsletter config
 }
 ```
@@ -122,7 +122,7 @@ Edit `data/authors/default.mdx`:
 
 ```md
 ---
-name: 'Bryan Beltran'
+name: 'Bryan Beltrán'
 avatar: '/static/images/avatar.png'
 occupation: 'Software Developer'
 company: 'Chewy.com'
@@ -208,9 +208,9 @@ Optional Giscus comment vars are listed in `.env.example`.
 
 ## License
 
-MIT © Bryan Beltran  
+MIT © Bryan Beltrán  
 Original work © Timothy Lin (timlrx) under MIT license.
 
 ---
 
-> Crafted with ❤ by Bryan Beltran. Feel free to explore the code, contribute, or get in touch!
+> Crafted with ❤ by Bryan Beltrán. Feel free to explore the code, contribute, or get in touch!
