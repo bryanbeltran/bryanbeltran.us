@@ -32,7 +32,7 @@ const resumeData = {
       bullets: [
         'Built backend tooling to automate tenant provisioning and IAM configuration in a multi-tenant CRM SaaS platform.',
         'Developed reusable Java libraries to validate authentication and service interactions, ensuring tenant isolation and security across shared infrastructure.',
-        'Participated in pilot of behavior-driven specifications (Cucumber) to clarify backend logic and improve alignment between engineering and product teams.',
+        'Participated in a pilot of behavior-driven specifications (Cucumber) to clarify backend logic and improve alignment between engineering and product teams.',
       ],
     },
     {
@@ -41,7 +41,7 @@ const resumeData = {
       location: 'Bloomington, MN',
       date: 'Jun 2018 – Mar 2020',
       bullets: [
-        'Maintained and extended Java libraries built on Page Object Model patterns to support stability of ecommerce and fulfillment platforms.',
+        'Maintained and extended Java libraries built on Page Object Model patterns to support stability of e-commerce and fulfillment platforms.',
         'Owned and configured Jenkins pipelines, integrating gate logic and failure thresholds to improve CI reliability and reduce bad deploys.',
         'Collaborated with backend engineers to identify integration points and improve release consistency across systems.',
       ],
