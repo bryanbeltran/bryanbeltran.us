@@ -21,7 +21,7 @@ I defined a small set of standards first:
 
 - **Service health**: golden signals per service (latency, error rate, throughput)
 - **Alert routing**: who gets paged, when, and for what severity
-- **Dashboard tiers**: views accessible to tier 1 support vs engineering deep-dives
+- **Dashboard tiers**: views accessible to tier 2 support vs engineering deep-dives
 
 Once standards existed, I could implement consistently across my team’s services instead of inventing a new layout per dashboard.
 
@@ -47,7 +47,7 @@ That mental shift — from unlimited exploration to deliberate sampling — was 
 
 ## Treat migration as a product rollout
 
-Dynatrace only helps if people use it. I ran training sessions for engineers, tier 1 and tier 2 support, and the broader customer care tech team — not generic tool tours, but workflows mapped to real incidents they had already lived through.
+Dynatrace only helps if people use it. I ran training sessions for engineers, tier 2 support, and the broader customer care tech team — not generic tool tours, but workflows mapped to real incidents they had already lived through.
 
 I also wrote documentation that walks through a real bug investigation start to finish — hitting the Dynatrace features and use cases people actually need during an incident, not a feature checklist. I ran that training before Splunk was turned off; that timing was right.
 
@@ -59,7 +59,7 @@ Examples beat feature lists. Showing how to trace a failed CRM callback beats ex
 
 - **Budget structured learning before migration starts.** People delayed switching because Splunk was what they knew. Training before shutoff helped, but if the timeline had allowed it, I'd get the team through professional development ahead of time — a Udemy course, internal study sessions — instead of cramming familiarity into the cutover window.
 
-- **Share dashboards with tier 1 sooner.** I didn't realize how heavily tier 1 relied on Splunk until late in the project. I'd get Dynatrace links and views in front of them earlier.
+- **Share dashboards with support sooner.** I didn't realize how heavily support relied on Splunk until late in the project. I'd get Dynatrace links and views in front of them earlier.
 
 - **Partner with the platform team from week one.** Dynatrace was owned by Chewy's observability team. Working with them closely was essential — and a good exercise in collaboration and learning from people who knew the platform better than I did. I'd formalize that relationship at kickoff.
 
