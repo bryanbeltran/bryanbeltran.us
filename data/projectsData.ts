@@ -4,6 +4,7 @@ export interface Project {
   title: string
   description: string
   href?: string
+  repoHref?: string
   status?: 'In Progress' | 'Launched' | 'Paused'
 }
 
@@ -12,7 +13,8 @@ const projectsData: Project[] = [
     title: 'SeedStarter',
     description:
       'Frost-aware garden planner with a live demo — ZIP-based zone lookup, planting timelines, and calendar export.',
-    href: 'https://github.com/bryanbeltran/seed-starter',
+    href: 'https://seed-starter.vercel.app',
+    repoHref: 'https://github.com/bryanbeltran/seed-starter',
     status: 'Launched',
   },
   {

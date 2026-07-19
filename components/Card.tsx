@@ -5,11 +5,12 @@ interface CardProps {
   title: string
   description: string
   href?: string
+  repoHref?: string
   imgSrc?: string
   status?: string // Added status prop
 }
 
-const Card = ({ title, description, imgSrc, href, status }: CardProps) => (
+const Card = ({ title, description, imgSrc, href, repoHref, status }: CardProps) => (
   <div className="md max-w-[544px] p-4 md:w-1/2">
     <div
       className={`${
@@ -52,14 +53,27 @@ const Card = ({ title, description, imgSrc, href, status }: CardProps) => (
           </div>
         )}
         <p className="prose mb-3 max-w-none text-gray-500 dark:text-gray-400">{description}</p>
-        {href && (
-          <Link
-            href={href}
-            className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 text-base leading-6 font-medium"
-            aria-label={`Link to ${title}`}
-          >
-            Learn more &rarr;
-          </Link>
+        {(href || repoHref) && (
+          <div className="flex flex-wrap gap-x-4 gap-y-1">
+            {href && (
+              <Link
+                href={href}
+                className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 text-base leading-6 font-medium"
+                aria-label={`${repoHref ? 'Live demo for' : 'Link to'} ${title}`}
+              >
+                {repoHref ? 'Live demo' : 'Learn more'} &rarr;
+              </Link>
+            )}
+            {repoHref && (
+              <Link
+                href={repoHref}
+                className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 text-base leading-6 font-medium"
+                aria-label={`GitHub repo for ${title}`}
+              >
+                GitHub &rarr;
+              </Link>
+            )}
+          </div>
         )}
       </div>
     </div>
