@@ -2,11 +2,20 @@ import { genPageMetadata } from 'app/seo'
 import { Metadata } from 'next'
 import siteMetadata from '@/data/siteMetadata'
 
-export const metadata: Metadata = genPageMetadata({
-  title: 'Contact',
-  description:
-    'Get in touch with Bryan Beltrán — email, LinkedIn, and GitHub. Open to collaboration and new opportunities.',
+const contactTitle = 'Contact Bryan Beltrán'
+const contactDescription = 'Get in touch with Bryan Beltrán — email, LinkedIn, and GitHub.'
+
+const base = genPageMetadata({
+  title: contactTitle,
+  description: contactDescription,
 })
+
+export const metadata: Metadata = {
+  ...base,
+  title: { absolute: contactTitle },
+  openGraph: { ...base.openGraph, title: contactTitle },
+  twitter: { ...base.twitter, title: contactTitle },
+}
 
 export default function Contact() {
   return (
