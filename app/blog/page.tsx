@@ -7,9 +7,9 @@ import { filterPublishedPosts } from '@/lib/blog'
 
 const POSTS_PER_PAGE = 5
 
-const blogTitle = 'Blog — Backend Engineering & Side Projects | Bryan Beltrán'
+const blogTitle = 'Blog — Software Engineering & Side Projects | Bryan Beltrán'
 const blogDescription =
-  'Notes on backend architecture, observability, side projects, and tools — by Bryan Beltrán.'
+  'Notes on system design, observability, side projects, and tools — by Bryan Beltrán.'
 
 const base = genPageMetadata({
   title: blogTitle,

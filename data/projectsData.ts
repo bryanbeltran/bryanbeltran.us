@@ -18,7 +18,7 @@ const projectsData: Project[] = [
   {
     title: 'Browser Listener',
     description:
-      'Privacy-first Chrome extension for local debug session capture — console, network, structured traces, and offline reports. No upload, no telemetry.',
+      'MV3 extension with user-consented capture, CDP network/console, per-frame content scripts, redaction before persistence, and local ZIP export with HAR + offline HTML report. No upload, no telemetry.',
     href: 'https://github.com/bryanbeltran/browser-listener',
     status: 'In Progress',
   },

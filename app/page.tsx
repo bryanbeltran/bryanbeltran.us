@@ -10,10 +10,10 @@ import { filterPublishedPosts } from '@/lib/blog'
 import { personJsonLd, webSiteJsonLd } from '@/lib/jsonLd'
 
 export const metadata: Metadata = {
-  title: { absolute: 'Bryan Beltrán — Backend Software Engineer' },
+  title: { absolute: 'Bryan Beltrán — Software Engineer' },
   description: siteMetadata.description,
   openGraph: {
-    title: 'Bryan Beltrán — Backend Software Engineer',
+    title: 'Bryan Beltrán — Software Engineer',
     description: siteMetadata.description,
     url: siteMetadata.siteUrl,
     siteName: siteMetadata.title,
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Bryan Beltrán — Backend Software Engineer',
+    title: 'Bryan Beltrán — Software Engineer',
     description: siteMetadata.description,
     images: [siteMetadata.socialBanner],
   },
@@ -37,7 +37,11 @@ function formatProjectStatus(status?: string) {
 }
 
 export default function Home() {
-  const latestPost = sortPosts(filterPublishedPosts(allBlogs))[0]
+  const featuredPost = sortPosts(
+    filterPublishedPosts(allBlogs).filter((post) =>
+      post.tags?.some((tag) => tag === 'engineering' || tag === 'observability')
+    )
+  )[0]
 
   return (
     <>
@@ -49,7 +53,7 @@ export default function Home() {
             Bryan Beltrán
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-400">
-            Backend Engineer — building tools for personal use.
+            Software Engineer at Chewy — Customer Care & Agent Experience
           </p>
         </section>
 
@@ -58,9 +62,9 @@ export default function Home() {
             About
           </h2>
           <p className="leading-relaxed text-gray-600 dark:text-gray-400">
-            I build software that enables great customer experiences and performs at scale. My
-            personal projects are currently in development, but each is something that fills a need
-            in my life or brings me joy while allowing me to learn.
+            I work on Chewy&apos;s Agent Experience team, building systems for customer care across
+            chat, phone, and email. Side projects solve problems in my own life and give me room to
+            learn.
           </p>
           <Link
             href="/about"
@@ -101,18 +105,18 @@ export default function Home() {
             Notes on tools I'm building and exploring.
           </p>
 
-          {latestPost && (
+          {featuredPost && (
             <div className="space-y-2">
               <h3 className="text-lg font-semibold">
                 <Link
-                  href={`/blog/${latestPost.slug}`}
+                  href={`/blog/${featuredPost.slug}`}
                   className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
                 >
-                  {latestPost.title}
+                  {featuredPost.title}
                 </Link>
               </h3>
-              {latestPost.summary && (
-                <p className="text-gray-600 dark:text-gray-400">{latestPost.summary}</p>
+              {featuredPost.summary && (
+                <p className="text-gray-600 dark:text-gray-400">{featuredPost.summary}</p>
               )}
             </div>
           )}

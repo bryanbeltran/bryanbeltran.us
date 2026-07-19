@@ -2,12 +2,12 @@
 title: 'Lessons from Migrating Observability from Splunk to Dynatrace'
 seoTitle: 'Splunk to Dynatrace Migration Lessons'
 date: '2026-05-15'
-summary: 'What I learned leading a multi-service observability migration — dashboards, alerting standards, and getting engineers to actually use the new tooling.'
+summary: 'What I learned leading my team’s Splunk-to-Dynatrace migration — dashboards, alerting standards, and getting engineers to actually use the new tooling.'
 tags: ['observability', 'dynatrace', 'engineering']
 draft: false
 ---
 
-At Chewy I led the migration of observability from Splunk to Dynatrace across multiple backend services. The goal was not just swapping vendors — it was retiring a $2M annual contract while improving how engineers and product managers actually debug production issues.
+At Chewy I led my team’s migration from Splunk to Dynatrace. Splunk was a company-wide platform — a $2M annual contract Chewy wanted to retire — and getting our team’s services fully onto Dynatrace was part of making that possible. The goal was not just swapping vendors; it was improving how our engineers and product managers debug production issues on the customer care platform.
 
 This post captures what worked, what I would do differently, and the patterns that made adoption stick.
 
@@ -19,30 +19,30 @@ We defined a small set of standards first:
 
 - **Service health**: golden signals per service (latency, error rate, throughput)
 - **Alert routing**: who gets paged, when, and for what severity
-- **Dashboard tiers**: L1 agent-facing vs L2 engineering deep-dives
+- **Dashboard tiers**: views accessible to tier 1 support vs engineering deep-dives
 
-Once standards existed, contractors and internal teams could implement consistently instead of inventing per-team layouts.
+Once standards existed, our team and the contractor could implement consistently instead of inventing per-service layouts.
 
 ## Treat migration as a product rollout
 
-Dynatrace only saves money if people use it. I ran training sessions for engineers and product managers — not generic tool tours, but workflows mapped to real incidents they had already lived through.
+Dynatrace only helps if people use it. I ran training sessions for engineers and product managers — not generic tool tours, but workflows mapped to real incidents they had already lived through.
 
 Examples beat feature lists. Showing how to trace a failed CRM callback beats explaining "distributed tracing" in the abstract.
 
-## Coordinate execution without becoming a bottleneck
+## Lead the project without becoming a bottleneck
 
-Multiple services migrated in parallel. I owned the design and review loop; contractors handled bulk instrumentation work against our checklist.
+I owned the project end to end — design, standards, and review — with one contractor handling instrumentation work against our checklist.
 
-That split kept velocity high while preserving architectural consistency — same tag naming, same alert thresholds philosophy, same runbook structure.
+That split kept velocity high while preserving consistency: same tag naming, same alert thresholds philosophy, same runbook structure.
 
 ## What I would do earlier next time
 
 - **Inventory alerts before migration.** Splunk had years of alert cruft. Auditing what actually fired (vs what someone set up in 2019) would have saved cleanup time.
-- **Define "done" per service.** A checklist: dashboards, alerts, runbook link, on-call validation — prevented "we installed the agent" from counting as migrated.
+- **Define "done" per service.** A checklist: dashboards, alerts, runbook link, on-call validation — prevented "we installed the OneAgent" from counting as migrated.
 - **Measure adoption.** If PMs still ask for Splunk links, migration is not finished.
 
 ## Why this matters beyond one company
 
-Observability migrations are as much about people and standards as they are about agents and indexes. The tooling change is the easy part. Getting a high-volume customer care platform to trust new signals during incidents is the real work.
+Observability migrations are as much about people and standards as they are about instrumentation and data pipelines. The tooling change is the easy part. Getting a team to trust new signals during incidents is the real work.
 
 If you are mid-migration or planning one, start with standards and training — not parity dashboards.

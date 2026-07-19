@@ -9,7 +9,7 @@ export function personJsonLd(pageUrl = siteMetadata.siteUrl) {
     name: siteMetadata.author,
     url: pageUrl,
     email: siteMetadata.email,
-    jobTitle: 'Backend Software Engineer',
+    jobTitle: 'Software Engineer',
     worksFor: { '@type': 'Organization', name: 'Chewy' },
     sameAs,
   }
@@ -35,7 +35,7 @@ export function profilePageJsonLd() {
       name: siteMetadata.author,
       url: `${siteMetadata.siteUrl}/about`,
       email: siteMetadata.email,
-      jobTitle: 'Backend Software Engineer',
+      jobTitle: 'Software Engineer',
       worksFor: { '@type': 'Organization', name: 'Chewy' },
       sameAs,
     },

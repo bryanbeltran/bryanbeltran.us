@@ -4,7 +4,7 @@ const siteMetadata = {
   author: 'Bryan Beltrán',
   headerTitle: 'bryanbeltran.us',
   description:
-    'Portfolio, resume, and writing by Bryan Beltrán. Backend engineer building tools, side projects, and technical notes.',
+    'Portfolio and writing by Bryan Beltrán — software engineer at Chewy (Customer Care & Agent Experience). Side projects and technical notes.',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://bryanbeltran.us',
