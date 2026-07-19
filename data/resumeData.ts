@@ -44,7 +44,7 @@ const resumeData = {
       date: 'Jan 2022 – Present',
       bullets: [
         'Owned the design, development, and operation of backend services powering CRM integrations and customer support workflows across a high-volume, mission-critical customer care platform.',
-        'Created the plan and led my team’s Splunk-to-Dynatrace migration — defined the work, did most of the implementation, and brought in a contractor late to help with instrumentation; built cost-visibility dashboards and end-to-end investigation docs; prerequisite to retiring Chewy’s $2M annual Splunk contract.',
+        'Created the plan and led my team’s Splunk-to-Dynatrace migration — defined the work, did most of the implementation, and brought in a contractor late to help with instrumentation; built cost-visibility dashboards and end-to-end investigation docs; retired Splunk for my team’s services as part of Chewy’s broader effort to end its $2M annual Splunk contract.',
         'Developed and delivered Dynatrace training for engineers, tier 2 support, and the customer care tech team, including query-cost practices under Dynatrace’s per-GB scanning model.',
         'Designed and built a Chrome extension that streamlines customer care troubleshooting by replacing manual Chrome DevTools-based workflows with automated capture of network logs, console output, screen recordings, and browser metadata, reducing friction in bug reporting and accelerating engineering triage.',
         'Designed and implemented event-driven automation using AWS SNS, SQS, and Lambda to automatically close shipped and canceled order cases, reducing agent workload and saving an estimated $480K annually.',
@@ -80,7 +80,8 @@ const resumeData = {
     },
     {
       name: 'Browser Listener',
-      description: 'Privacy-first Chrome extension for local debug session capture.',
+      description:
+        'Privacy-first MV3 extension for consent-gated, local-only Facebook session capture and structured ZIP export.',
     },
     {
       name: 'The Gathering Project',

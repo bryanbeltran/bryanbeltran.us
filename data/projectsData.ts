@@ -20,14 +20,15 @@ const projectsData: Project[] = [
   {
     title: 'Browser Listener',
     description:
-      'MV3 extension with user-consented capture, CDP network/console, per-frame content scripts, redaction before persistence, and local ZIP export with HAR + offline HTML report. No upload, no telemetry.',
+      'Privacy-first MV3 extension for consent-gated, local-only Facebook session capture — posts, comments, reactions, and people exported as a structured ZIP. No upload, no telemetry.',
     href: 'https://github.com/bryanbeltran/browser-listener',
     status: 'In Progress',
   },
   {
     title: 'The Gathering Project',
     description: 'Website for a nonprofit organization. Built with Next.js and hosted on Vercel.',
-    href: 'https://github.com/bryanbeltran/thegatheringproject.us',
+    href: 'https://www.thegatheringproject.us',
+    repoHref: 'https://github.com/bryanbeltran/thegatheringproject.us',
     status: 'Launched',
   },
   {
@@ -41,7 +42,7 @@ const projectsData: Project[] = [
     description:
       'ADHD-focused homepage PWA — one task, optional focus note, and a 25-minute countdown. Installable, local-only, no accounts.',
     href: 'https://github.com/bryanbeltran/anchor',
-    status: 'Launched',
+    status: 'In Progress',
   },
   {
     title: 'TrafficSim',

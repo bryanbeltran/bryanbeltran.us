@@ -60,7 +60,7 @@ Edit `data/siteMetadata.js`:
 const siteMetadata = {
   title: 'bryanbeltran.us',
   description:
-    'Portfolio, resume, and writing by Bryan Beltrán. Backend engineer building tools, side projects, and technical notes.',
+    'Portfolio and writing by Bryan Beltrán — software engineer at Chewy (Customer Care & Agent Experience). Side projects and technical notes.',
   siteUrl: 'https://bryanbeltran.us',
   author: 'Bryan Beltrán',
   // ...social links, comment, newsletter config
@@ -88,6 +88,7 @@ interface Project {
   title: string
   description: string
   href?: string
+  repoHref?: string
   status?: 'In Progress' | 'Launched' | 'Paused'
 }
 
@@ -95,22 +96,24 @@ const projectsData: Project[] = [
   {
     title: 'SeedStarter',
     description:
-      'A garden planning tool that shows ideal planting windows based on your USDA zone and frost data.',
-    href: 'https://github.com/bryanbeltran/seed-starter',
+      'Frost-aware garden planner with a live demo — ZIP-based zone lookup, planting timelines, and calendar export.',
+    href: 'https://seed-starter.vercel.app',
+    repoHref: 'https://github.com/bryanbeltran/seed-starter',
+    status: 'Launched',
+  },
+  {
+    title: 'Browser Listener',
+    description:
+      'Privacy-first MV3 extension for consent-gated, local-only Facebook session capture.',
+    href: 'https://github.com/bryanbeltran/browser-listener',
     status: 'In Progress',
   },
   {
     title: 'The Gathering Project',
     description: 'Website for a nonprofit organization. Built with Next.js and hosted on Vercel.',
-    href: 'https://github.com/bryanbeltran/thegatheringproject.us',
+    href: 'https://www.thegatheringproject.us',
+    repoHref: 'https://github.com/bryanbeltran/thegatheringproject.us',
     status: 'Launched',
-  },
-  {
-    title: 'Mitten Index',
-    description:
-      'A cold-weather readiness score that combines forecast data with heuristics to help you decide how bundled up to get.',
-    href: 'https://github.com/bryanbeltran/mitten-index',
-    status: 'In Progress',
   },
 ]
 
@@ -125,14 +128,14 @@ Edit `data/authors/default.mdx`:
 ---
 name: 'Bryan Beltrán'
 avatar: '/static/images/avatar.png'
-occupation: 'Software Developer'
-company: 'Chewy.com'
+occupation: 'Software Engineer'
+company: 'Chewy'
 email: 'bryan.beltran@mnsu.edu'
 github: 'bryanbeltran'
 linkedin: 'bryan-beltran'
 ---
 
-I'm a backend software developer building systems that support large-scale customer care operations.
+I'm a software engineer building systems that support large-scale customer care operations.
 ```
 
 ---
