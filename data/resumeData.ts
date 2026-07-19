@@ -2,13 +2,39 @@ const resumeData = {
   name: 'Bryan Beltrán',
   title: 'Software Engineer II',
   summary:
-    'Software Engineer focused on scalable tools and platform integrations that support high-volume customer care operations. Experienced in AWS event-driven architectures, backend observability, and infrastructure-as-code. Focused on clean abstractions, resilient systems, and removing friction for developers. Open to remote roles and well-versed in collaborating across distributed engineering teams.',
+    'Software Engineer focused on scalable tools and platform integrations that support high-volume customer care operations. Experienced in AWS event-driven architectures, backend observability, and infrastructure-as-code. Focused on clean abstractions, resilient systems, and removing friction for developers.',
   skills: {
-    'Languages & Frameworks': ['PHP', 'Python', 'JavaScript (Node.js, TypeScript)', 'Java'],
-    'Cloud & Infra': ['AWS (Lambda, SQS, SNS, S3, Kinesis, Firehose)', 'Terraform'],
-    'APIs & Tooling': ['REST', 'GraphQL', 'Postman', 'Git'],
-    Databases: ['MySQL', 'Microsoft SQL Server', 'Oracle SQL'],
-    'Monitoring & CI/CD': ['Dynatrace', 'Splunk', 'Vercel', 'Jenkins'],
+    'Languages & Frameworks': [
+      'TypeScript',
+      'JavaScript',
+      'Python (FastAPI)',
+      'Java',
+      'PHP',
+      'Next.js',
+      'React',
+    ],
+    'Cloud & Infrastructure': [
+      'AWS (Lambda, SQS, SNS, S3, Kinesis, Firehose)',
+      'Terraform',
+      'Vercel',
+    ],
+    'Data & APIs': [
+      'PostgreSQL',
+      'MySQL',
+      'Microsoft SQL Server',
+      'Oracle SQL',
+      'REST',
+      'GraphQL',
+      'SQLAlchemy (async)',
+    ],
+    'Observability & Tooling': [
+      'Dynatrace',
+      'Splunk',
+      'Chrome Extensions (MV3, CDP)',
+      'Git',
+      'Jenkins',
+    ],
+    Testing: ['Vitest', 'Playwright', 'pytest'],
   },
   experience: [
     {
@@ -63,6 +89,14 @@ const resumeData = {
     {
       name: 'GovDataHub',
       description: 'FastAPI backend for government datasets.',
+    },
+    {
+      name: 'Anchor',
+      description: 'ADHD-focused focus homepage PWA with task lock and countdown timer.',
+    },
+    {
+      name: 'TrafficSim',
+      description: 'Zipper merge and roundabout traffic behavior simulator.',
     },
   ],
   education: {

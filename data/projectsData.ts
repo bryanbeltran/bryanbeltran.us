@@ -4,6 +4,7 @@ export interface Project {
   title: string
   description: string
   href?: string
+  repoHref?: string
   status?: 'In Progress' | 'Launched' | 'Paused'
 }
 
@@ -12,7 +13,8 @@ const projectsData: Project[] = [
     title: 'SeedStarter',
     description:
       'Frost-aware garden planner with a live demo — ZIP-based zone lookup, planting timelines, and calendar export.',
-    href: 'https://github.com/bryanbeltran/seed-starter',
+    href: 'https://seed-starter.vercel.app',
+    repoHref: 'https://github.com/bryanbeltran/seed-starter',
     status: 'Launched',
   },
   {
@@ -33,6 +35,20 @@ const projectsData: Project[] = [
     description: 'FastAPI backend for aggregating and querying government datasets.',
     href: 'https://github.com/bryanbeltran/govdatahub',
     status: 'Paused',
+  },
+  {
+    title: 'Anchor',
+    description:
+      'ADHD-focused homepage PWA — one task, optional focus note, and a 25-minute countdown. Installable, local-only, no accounts.',
+    href: 'https://github.com/bryanbeltran/anchor',
+    status: 'Launched',
+  },
+  {
+    title: 'TrafficSim',
+    description:
+      'Traffic behavior simulator for zipper merges and roundabouts — modeling real driver hesitation, not ideal theory.',
+    href: 'https://github.com/bryanbeltran/traffic-sim',
+    status: 'In Progress',
   },
 ]
 

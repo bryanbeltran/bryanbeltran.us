@@ -79,12 +79,13 @@ export default function Home() {
             What I’m Building
           </h2>
           <div className="-m-4 flex flex-wrap">
-            {projectsData.map(({ title, description, href, status }) => (
+            {projectsData.map(({ title, description, href, repoHref, status }) => (
               <Card
                 key={title}
                 title={title}
                 description={description}
                 href={href}
+                repoHref={repoHref}
                 status={formatProjectStatus(status) ?? undefined}
               />
             ))}
