@@ -51,21 +51,20 @@ const resumeData = {
     {
       name: 'SeedStarter',
       description:
-        'Garden planning tool that shows ideal planting windows based on USDA zone and frost data (TypeScript, turf.js).',
-    },
-    {
-      name: 'GovDataHub',
-      description:
-        'Platform for collecting, organizing, and exploring government data in one place.',
+        'Frost-aware garden planner with live demo — ZIP-based zone lookup, planting timelines, and calendar export (Next.js, TypeScript).',
     },
     {
       name: 'Browser Listener',
       description:
-        'Browser utility for observing page activity and experimenting with browser events.',
+        'Privacy-first Chrome extension for local debug session capture — console, network, structured traces, and offline reports.',
     },
     {
       name: 'The Gathering Project',
       description: 'Website for a nonprofit organization. Built with Next.js and hosted on Vercel.',
+    },
+    {
+      name: 'GovDataHub',
+      description: 'FastAPI backend for aggregating and querying government datasets.',
     },
   ],
   education: {
