@@ -41,22 +41,29 @@ You cannot teach that without visibility. I built dashboards to make cost legibl
 
 Once people could see the bill, the behavior change stuck. Cost stopped being abstract.
 
+We learned that the hard way. After full cutover, alert searches alone drove roughly $150K in spend before these dashboards existed.
+
 That mental shift — from unlimited exploration to deliberate sampling — was as hard as the tooling change.
 
 ## Treat migration as a product rollout
 
 Dynatrace only helps if people use it. I ran training sessions for engineers, tier 1 and tier 2 support, and the broader customer care tech team — not generic tool tours, but workflows mapped to real incidents they had already lived through.
 
-I also wrote documentation that walks through a real bug investigation start to finish — hitting the Dynatrace features and use cases people actually need during an incident, not a feature checklist.
+I also wrote documentation that walks through a real bug investigation start to finish — hitting the Dynatrace features and use cases people actually need during an incident, not a feature checklist. We ran that training before Splunk was turned off; that timing was right.
 
 Examples beat feature lists. Showing how to trace a failed CRM callback beats explaining "distributed tracing" in the abstract.
 
 ## What I would do earlier next time
 
-- **Inventory alerts before migration.** Splunk had years of alert cruft. Auditing what actually fired (vs what someone set up in 2019) would have saved cleanup time.
-- **Define "done" per service.** A checklist: dashboards, alerts, runbook link, on-call validation — prevented "we installed the OneAgent" from counting as migrated.
-- **Teach the cost model early.** Per-GB scanning should be part of day-one training, not a surprise after people build expensive dashboards.
-- **Measure adoption.** If people still ask for Splunk links, migration is not finished.
+- **Stand up cost visibility before cutover.** We migrated fully, then alert searches alone drove roughly $150K in spend before I built the cost dashboards. I'd track per-query, per-alert, and team spend from day one and tune as we moved — not after everything was already running.
+
+- **Budget structured learning before migration starts.** People delayed switching because Splunk was what they knew. Training before shutoff helped, but if the timeline had allowed it, I'd get the team through professional development ahead of time — a Udemy course, internal study sessions — instead of cramming familiarity into the cutover window.
+
+- **Share dashboards with tier 1 sooner.** I didn't realize how heavily tier 1 relied on Splunk until late in the project. I'd get Dynatrace links and views in front of them earlier.
+
+- **Partner with the platform team from week one.** Dynatrace was owned by our observability team. Working with them closely was essential — and a good exercise in collaboration and learning from people who knew the platform better than I did. I'd formalize that relationship at kickoff.
+
+- **Audit scan volume while deprecating, not after.** I cut alerts and dashboards that scanned too much data, but some of that cleanup came too late. I'd review data scanned per alert and dashboard during migration, not once the bill showed up.
 
 ## Why this matters beyond one company
 
