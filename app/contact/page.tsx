@@ -2,9 +2,8 @@ import { genPageMetadata } from 'app/seo'
 import { Metadata } from 'next'
 import siteMetadata from '@/data/siteMetadata'
 
-const contactTitle = 'Contact Bryan Beltrán — Open to Opportunities'
-const contactDescription =
-  'Get in touch with Bryan Beltrán — email, LinkedIn, and GitHub. Open to collaboration and new opportunities.'
+const contactTitle = 'Contact Bryan Beltrán'
+const contactDescription = 'Get in touch with Bryan Beltrán — email, LinkedIn, and GitHub.'
 
 const base = genPageMetadata({
   title: contactTitle,
