@@ -2,7 +2,7 @@ const resumeData = {
   name: 'Bryan Beltrán',
   title: 'Software Engineer II',
   summary:
-    'Software Engineer focused on scalable tools and platform integrations that support high-volume customer care operations. Experienced in AWS event-driven architectures, backend observability, and infrastructure-as-code. Focused on clean abstractions, resilient systems, and removing friction for developers. Open to remote roles and well-versed in collaborating across distributed engineering teams.',
+    'Software Engineer focused on scalable tools and platform integrations that support high-volume customer care operations. Experienced in AWS event-driven architectures, backend observability, and infrastructure-as-code. Focused on clean abstractions, resilient systems, and removing friction for developers.',
   skills: {
     'Languages & Frameworks': [
       'TypeScript',
@@ -89,6 +89,14 @@ const resumeData = {
     {
       name: 'GovDataHub',
       description: 'FastAPI backend for government datasets.',
+    },
+    {
+      name: 'Anchor',
+      description: 'ADHD-focused focus homepage PWA with task lock and countdown timer.',
+    },
+    {
+      name: 'TrafficSim',
+      description: 'Zipper merge and roundabout traffic behavior simulator.',
     },
   ],
   education: {
