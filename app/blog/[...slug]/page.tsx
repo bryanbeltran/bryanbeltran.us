@@ -52,7 +52,7 @@ export async function generateMetadata(props: {
   const metaTitle = post.seoTitle || post.title
 
   return {
-    title: metaTitle,
+    title: { absolute: metaTitle },
     description: post.summary,
     openGraph: {
       title: metaTitle,

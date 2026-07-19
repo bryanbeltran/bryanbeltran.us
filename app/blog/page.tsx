@@ -1,3 +1,4 @@
+import { Metadata } from 'next'
 import { allCoreContent, sortPosts } from 'pliny/utils/contentlayer'
 import { allBlogs } from 'contentlayer/generated'
 import { genPageMetadata } from 'app/seo'
@@ -6,11 +7,21 @@ import { filterPublishedPosts } from '@/lib/blog'
 
 const POSTS_PER_PAGE = 5
 
-export const metadata = genPageMetadata({
-  title: 'Writing About Building Things',
-  description:
-    'Notes on tools I am building and exploring — backend architecture, side projects, and experiments.',
+const blogTitle = 'Blog — Backend Engineering & Side Projects | Bryan Beltrán'
+const blogDescription =
+  'Notes on backend architecture, observability, side projects, and tools — by Bryan Beltrán.'
+
+const base = genPageMetadata({
+  title: blogTitle,
+  description: blogDescription,
 })
+
+export const metadata: Metadata = {
+  ...base,
+  title: { absolute: blogTitle },
+  openGraph: { ...base.openGraph, title: blogTitle },
+  twitter: { ...base.twitter, title: blogTitle },
+}
 
 export default async function BlogPage() {
   const posts = allCoreContent(sortPosts(filterPublishedPosts(allBlogs)))
