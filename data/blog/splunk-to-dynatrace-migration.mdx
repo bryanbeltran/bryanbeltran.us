@@ -51,8 +51,6 @@ Dynatrace only helps if people use it. I ran training sessions for engineers, ti
 
 I also wrote documentation that walks through a real bug investigation start to finish — hitting the Dynatrace features and use cases people actually need during an incident, not a feature checklist. I ran that training before Splunk was turned off; that timing was right.
 
-Examples beat feature lists. Showing how to trace a failed CRM callback beats explaining "distributed tracing" in the abstract.
-
 ## What I would do earlier next time
 
 - **Stand up cost visibility before cutover.** I finished migrating the team, then alert searches alone drove roughly $150K in spend before I built the cost dashboards. I'd track per-query, per-alert, and team spend from day one and tune as I went — not after everything was already running.
@@ -65,7 +63,7 @@ Examples beat feature lists. Showing how to trace a failed CRM callback beats ex
 
 - **Partner with the platform team from week one.** Dynatrace was owned by Chewy's observability team. Working with them closely was essential — and a good exercise in collaboration and learning from people who knew the platform better than I did. I'd formalize that relationship at kickoff.
 
-- **Audit scan volume while deprecating, not after.** I cut alerts and dashboards that scanned too much data, but some of that cleanup came too late. I'd review data scanned per alert and dashboard during migration, not once the bill showed up.
+- **Redesign alerts and dashboards for scan cost from the start.** When the observability team flagged high scan volume on our alerts and dashboards, I redesigned them to answer the same questions with less data. I'd review scan cost per alert and dashboard during migration, not wait for the platform team to surface it.
 
 ## Why this matters beyond one company
 
