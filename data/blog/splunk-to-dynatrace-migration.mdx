@@ -7,9 +7,9 @@ tags: ['observability', 'dynatrace', 'engineering']
 draft: false
 ---
 
-At Chewy I led my team’s migration from Splunk to Dynatrace. Splunk was a company-wide platform — a $2M annual contract Chewy wanted to retire — and getting our team’s services fully onto Dynatrace was part of making that possible. The goal was not just swapping vendors; it was improving how our engineers debug production issues on the customer care platform.
+At Chewy I led my team’s migration from Splunk to Dynatrace. Splunk was a company-wide platform — a $2M annual contract Chewy wanted to retire — and getting my team’s services fully onto Dynatrace was part of making that possible. The goal was not just swapping vendors; it was improving how engineers on my team debug production issues on the customer care platform.
 
-I created the plan, defined the work, and did most of the implementation. A contractor joined near the end to help with instrumentation against our checklist.
+I created the plan, defined the work, and did most of the implementation. A contractor joined near the end to help with instrumentation against my checklist.
 
 This post captures what worked, what I would do differently, and the patterns that made adoption stick.
 
@@ -17,49 +17,58 @@ This post captures what worked, what I would do differently, and the patterns th
 
 The first temptation is to recreate every Splunk dashboard one-for-one. That recreates the mess.
 
-We defined a small set of standards first:
+I defined a small set of standards first:
 
 - **Service health**: golden signals per service (latency, error rate, throughput)
 - **Alert routing**: who gets paged, when, and for what severity
-- **Dashboard tiers**: views accessible to tier 1 support vs engineering deep-dives
+- **Dashboard tiers**: views accessible to tier 2 support vs engineering deep-dives
 
-Once standards existed, I could implement consistently across our services instead of inventing a new layout per dashboard.
+Once standards existed, I could implement consistently across my team’s services instead of inventing a new layout per dashboard.
 
 ## The pricing model changes how you think
 
-Splunk let us query as much data as we wanted for the same price. Dynatrace charges per gigabyte scanned.
+Under Splunk, query volume did not change the price. Dynatrace charges per gigabyte scanned.
 
 That sounds like a billing detail. It became a design constraint.
 
-Every dashboard, ad-hoc query, and alert evaluation had a cost implication we never had to weigh before. We had to teach people to scope queries, avoid runaway searches, and build views that answered the question without scanning more data than necessary.
+Every dashboard, ad-hoc query, and alert evaluation had a cost implication I never had to weigh before. I had to teach people to scope queries, avoid runaway searches, and build views that answered the question without scanning more data than necessary.
 
 You cannot teach that without visibility. I built dashboards to make cost legible:
 
 - **Per-user query cost** — each person could see what their most recent queries scanned
-- **Alert and dashboard cost** — what our monitors and shared views were consuming
+- **Alert and dashboard cost** — what my team’s monitors and shared views were consuming
 - **Team rollups** — trailing 30-day spend and year-to-date totals
 
 Once people could see the bill, the behavior change stuck. Cost stopped being abstract.
+
+I learned that the hard way. After full cutover, alert searches alone drove roughly $150K in spend before I built these dashboards.
 
 That mental shift — from unlimited exploration to deliberate sampling — was as hard as the tooling change.
 
 ## Treat migration as a product rollout
 
-Dynatrace only helps if people use it. I ran training sessions for engineers, tier 1 and tier 2 support, and the broader customer care tech team — not generic tool tours, but workflows mapped to real incidents they had already lived through.
+Dynatrace only helps if people use it. I ran training sessions for engineers, tier 2 support, and the broader customer care tech team — not generic tool tours, but workflows mapped to real incidents they had already lived through.
 
-I also wrote documentation that walks through a real bug investigation start to finish — hitting the Dynatrace features and use cases people actually need during an incident, not a feature checklist.
+I also wrote documentation that walks through a real bug investigation start to finish — hitting the Dynatrace features and use cases people actually need during an incident, not a feature checklist. I ran that training before Splunk was turned off; that timing was right.
 
 Examples beat feature lists. Showing how to trace a failed CRM callback beats explaining "distributed tracing" in the abstract.
 
 ## What I would do earlier next time
 
-- **Inventory alerts before migration.** Splunk had years of alert cruft. Auditing what actually fired (vs what someone set up in 2019) would have saved cleanup time.
-- **Define "done" per service.** A checklist: dashboards, alerts, runbook link, on-call validation — prevented "we installed the OneAgent" from counting as migrated.
-- **Teach the cost model early.** Per-GB scanning should be part of day-one training, not a surprise after people build expensive dashboards.
-- **Measure adoption.** If people still ask for Splunk links, migration is not finished.
+- **Stand up cost visibility before cutover.** I finished migrating the team, then alert searches alone drove roughly $150K in spend before I built the cost dashboards. I'd track per-query, per-alert, and team spend from day one and tune as I went — not after everything was already running.
+
+- **Budget structured learning before migration starts.** People delayed switching because Splunk was what they knew. Training before shutoff helped, but if the timeline had allowed it, I'd get the team through professional development ahead of time — a Udemy course, internal study sessions — instead of cramming familiarity into the cutover window.
+
+- **Cut off Splunk logging sooner.** While both tools were available, people kept reaching for Splunk. I would have stopped sending logs to Splunk earlier to force Dynatrace adoption — the timeline didn't allow it, but a hard cutoff beats running parallel paths when you're trying to change habits.
+
+- **Share dashboards with support sooner.** I didn't realize how heavily support relied on Splunk until late in the project. I'd get Dynatrace links and views in front of them earlier.
+
+- **Partner with the platform team from week one.** Dynatrace was owned by Chewy's observability team. Working with them closely was essential — and a good exercise in collaboration and learning from people who knew the platform better than I did. I'd formalize that relationship at kickoff.
+
+- **Audit scan volume while deprecating, not after.** I cut alerts and dashboards that scanned too much data, but some of that cleanup came too late. I'd review data scanned per alert and dashboard during migration, not once the bill showed up.
 
 ## Why this matters beyond one company
 
 Observability migrations are as much about people and standards as they are about instrumentation and data pipelines. The tooling change is the easy part. Getting a team to trust new signals during incidents is the real work.
 
-If you are mid-migration or planning one, start with standards and training — not parity dashboards. And if your new vendor meters by data scanned, treat that as an architecture decision, not a finance footnote.
+If you are mid-migration or planning one, start with standards and training — not parity dashboards. And if your new vendor meters by data scanned, treat that as a system design decision, not a finance footnote.
