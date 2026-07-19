@@ -54,22 +54,22 @@ const MobileNav = () => {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <div className="fixed inset-0 z-[100] bg-black/25" />
+            <div className="fixed inset-0 bg-black/25" />
           </TransitionChild>
 
           <TransitionChild
             as={Fragment}
             enter="transition ease-in-out duration-300 transform"
-            enterFrom="translate-x-full opacity-0"
-            enterTo="translate-x-0 opacity-95"
+            enterFrom="translate-x-full"
+            enterTo="translate-x-0"
             leave="transition ease-in duration-200 transform"
-            leaveFrom="translate-x-0 opacity-95"
-            leaveTo="translate-x-full opacity-0"
+            leaveFrom="translate-x-0"
+            leaveTo="translate-x-full"
           >
-            <DialogPanel className="fixed top-0 left-0 z-70 h-full w-full bg-white/95 duration-300 dark:bg-gray-950/98">
+            <DialogPanel className="fixed top-0 left-0 z-[101] flex h-full w-full flex-col bg-white dark:bg-gray-950">
               <nav
                 ref={navRef}
-                className="mt-8 flex h-full basis-0 flex-col items-start overflow-y-auto pt-2 pl-12 text-left"
+                className="relative z-[102] mt-8 flex flex-1 basis-0 flex-col items-start overflow-y-auto pt-2 pl-12 text-left"
                 role="navigation"
                 aria-label="Mobile navigation"
               >
@@ -77,7 +77,7 @@ const MobileNav = () => {
                   <Link
                     key={link.title}
                     href={link.href}
-                    className="hover:text-primary-500 dark:hover:text-primary-400 mb-4 py-2 pr-4 text-2xl font-bold tracking-widest text-gray-900 outline outline-0 dark:text-gray-100"
+                    className="hover:text-primary-500 dark:hover:text-primary-400 relative z-[102] mb-4 block py-2 pr-4 text-2xl font-bold tracking-widest text-gray-900 outline outline-0 dark:text-gray-100"
                     onClick={onToggleNav}
                   >
                     {link.title}
@@ -86,7 +86,7 @@ const MobileNav = () => {
               </nav>
 
               <button
-                className="hover:text-primary-500 dark:hover:text-primary-400 fixed top-7 right-4 z-80 h-16 w-16 p-4 text-gray-900 dark:text-gray-100"
+                className="hover:text-primary-500 dark:hover:text-primary-400 fixed top-7 right-4 z-[103] h-16 w-16 p-4 text-gray-900 dark:text-gray-100"
                 aria-label="Toggle Menu"
                 onClick={onToggleNav}
               >
