@@ -50,21 +50,19 @@ const resumeData = {
   projects: [
     {
       name: 'SeedStarter',
-      description:
-        'Frost-aware garden planner with live demo — ZIP-based zone lookup, planting timelines, and calendar export (Next.js, TypeScript).',
+      description: 'Frost-aware garden planner with live demo (Next.js, TypeScript).',
     },
     {
       name: 'Browser Listener',
-      description:
-        'Privacy-first Chrome extension for local debug session capture — console, network, structured traces, and offline reports.',
+      description: 'Privacy-first Chrome extension for local debug session capture.',
     },
     {
       name: 'The Gathering Project',
-      description: 'Website for a nonprofit organization. Built with Next.js and hosted on Vercel.',
+      description: 'Nonprofit website (Next.js, Vercel).',
     },
     {
       name: 'GovDataHub',
-      description: 'FastAPI backend for aggregating and querying government datasets.',
+      description: 'FastAPI backend for government datasets.',
     },
   ],
   education: {
