@@ -5,7 +5,7 @@ import siteMetadata from '@/data/siteMetadata'
 import { personJsonLd } from '@/lib/jsonLd'
 
 const resumeDescription =
-  'Resume of Bryan Beltrán — Software Engineer II at Chewy. AWS, event-driven systems, observability, and backend tooling. Open to remote roles.'
+  'Resume of Bryan Beltrán — Software Engineer II at Chewy. AWS, event-driven systems, observability, and backend tooling.'
 
 export const metadata: Metadata = {
   title: { absolute: 'Resume | Bryan Beltrán' },
