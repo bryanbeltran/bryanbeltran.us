@@ -33,11 +33,21 @@ That sounds like a billing detail. It became a design constraint.
 
 Every dashboard, ad-hoc query, and alert evaluation had a cost implication we never had to weigh before. We had to teach people to scope queries, avoid runaway searches, and build views that answered the question without scanning more data than necessary.
 
+You cannot teach that without visibility. I built dashboards to make cost legible:
+
+- **Per-user query cost** — each person could see what their most recent queries scanned
+- **Alert and dashboard cost** — what our monitors and shared views were consuming
+- **Team rollups** — trailing 30-day spend and year-to-date totals
+
+Once people could see the bill, the behavior change stuck. Cost stopped being abstract.
+
 That mental shift — from unlimited exploration to deliberate sampling — was as hard as the tooling change.
 
 ## Treat migration as a product rollout
 
 Dynatrace only helps if people use it. I ran training sessions for engineers, tier 1 and tier 2 support, and the broader customer care tech team — not generic tool tours, but workflows mapped to real incidents they had already lived through.
+
+I also wrote documentation that walks through a real bug investigation start to finish — hitting the Dynatrace features and use cases people actually need during an incident, not a feature checklist.
 
 Examples beat feature lists. Showing how to trace a failed CRM callback beats explaining "distributed tracing" in the abstract.
 
