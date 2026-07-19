@@ -18,8 +18,8 @@ const resumeData = {
       date: 'Jan 2022 – Present',
       bullets: [
         'Owned the design, development, and operation of backend services powering CRM integrations and customer support workflows across a high-volume, mission-critical customer care platform.',
-        'Led migration of observability tooling from Splunk to Dynatrace across multiple services, coordinating contractor execution and implementing dashboards, alerting, and monitoring standards, enabling retirement of a $2M annual contract.',
-        'Developed and delivered Dynatrace training sessions for engineers and product managers, accelerating adoption of observability best practices across teams.',
+        'Led my team’s migration from Splunk to Dynatrace, working with a contractor to implement dashboards, alerting, and monitoring standards across our services — a prerequisite to retiring Chewy’s $2M annual Splunk contract.',
+        'Developed and delivered Dynatrace training sessions for engineers and product managers on the team, accelerating adoption of observability best practices.',
         'Designed and built a Chrome extension that streamlines customer care troubleshooting by replacing manual Chrome DevTools-based workflows with automated capture of network logs, console output, screen recordings, and browser metadata, reducing friction in bug reporting and accelerating engineering triage.',
         'Designed and implemented event-driven automation using AWS SNS, SQS, and Lambda to automatically close shipped and canceled order cases, reducing agent workload and saving an estimated $480K annually.',
       ],
