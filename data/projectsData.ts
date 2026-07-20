@@ -42,7 +42,7 @@ const projectsData: Project[] = [
     description:
       'ADHD-focused homepage PWA — one task, optional focus note, and a 25-minute countdown. Installable, local-only, no accounts.',
     href: 'https://github.com/bryanbeltran/anchor',
-    status: 'In Progress',
+    status: 'Paused',
   },
   {
     title: 'TrafficSim',
