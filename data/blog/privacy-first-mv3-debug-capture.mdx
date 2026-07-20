@@ -2,16 +2,16 @@
 title: 'Building a Privacy-First Debug Capture Extension on Manifest V3'
 seoTitle: 'MV3 Debug Capture Extension Architecture'
 date: '2026-07-19'
-summary: 'How I designed a Manifest V3 Chrome extension for local-only debug session capture — CDP, redaction, MV3 service worker constraints, and why nothing leaves the browser.'
+summary: 'MV3 capture architecture from production customer-care tooling — CDP, redaction, service worker constraints, and why nothing leaves the browser.'
 tags: ['engineering', 'tools', 'chrome-extension']
 draft: false
 ---
 
 Manual browser triage is slow and inconsistent. Someone reports a bug, you ask for screenshots, they paste a console snippet, you ask for network requests, they forget a header, you schedule a screen share. The repro bundle is incomplete before engineering even opens a ticket.
 
-I built a Chrome extension to replace that loop: start a session, browse normally, stop and export a local ZIP with network logs, console output, browser metadata, and an offline HTML report. No upload. No telemetry. Consent required before capture starts.
+I built a Chrome extension at work to replace that loop on a customer care platform: start a session, browse normally, stop and export a local ZIP with network logs, console output, browser metadata, and an offline HTML report. No upload. No telemetry. Consent required before capture starts.
 
-This post covers the architecture, the MV3 constraints that shaped it, and the tradeoffs I would make again.
+This post covers the MV3 architecture behind that production tooling — not my open-source [Browser Listener](/projects) side project, which focuses on local Facebook session capture. The patterns overlap; the product scope does not.
 
 ## The problem
 
@@ -120,7 +120,7 @@ What you deliberately do not capture matters as much as what you do. Response bo
 
 ## Results
 
-The extension replaced a manual DevTools checklist for internal triage workflows. Agents and engineers get a consistent repro format; engineering spends less time asking for missing artifacts.
+On a customer care platform, the extension replaced a manual DevTools checklist for internal triage workflows. Agents and engineers get a consistent repro format; engineering spends less time asking for missing artifacts.
 
 The patterns — consent-first capture, redact-on-write, CDP with fallback, MV3 recovery — apply beyond browser extensions. Any system that collects sensitive operational data should treat **legibility**, **cost visibility**, and **default-deny privacy** as design constraints, not afterthoughts.
 

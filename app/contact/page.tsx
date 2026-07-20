@@ -25,8 +25,8 @@ export default function Contact() {
           Contact Me
         </h1>
         <p className="text-lg text-gray-600 dark:text-gray-400">
-          I specialize in backend development, but I'm always open to opportunities to learn
-          something new or collaborate on projects that matter.
+          Software engineer at Chewy building customer care systems. Reach out about a project, a
+          post, or collaboration.
         </p>
       </div>
 
@@ -60,8 +60,6 @@ export default function Contact() {
         </div>
         <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
           I typically respond within 24 hours. Email is best for project inquiries.
-          <br />
-          References available upon request.
         </p>
         <p className="text-xs text-gray-400 dark:text-gray-500">
           Your information will never be shared.

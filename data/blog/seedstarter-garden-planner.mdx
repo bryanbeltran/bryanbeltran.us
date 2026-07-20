@@ -15,9 +15,9 @@ This project is really just me solving that problem for myself. I want something
 
 ## What I'm Building
 
-SeedStarter currently lives somewhere between a concept and a minimum viable product. The idea is straightforward: you enter your zip code, pick a few common crops, and it tells you when to start seeds indoors and when to transplant them. From there, it generates a `.ics` file you can drop straight into your calendar.
+SeedStarter is a live garden planner at [seed-starter.vercel.app](https://seed-starter.vercel.app). Enter your zip code, pick crops, and get indoor-start and transplant dates — then export a `.ics` file for your calendar.
 
-That's the scope for now. I have plenty of ideas beyond that, but the goal at the moment is to get the basics right.
+The core flow works. I am still tightening edge cases and expanding crop coverage.
 
 ## The Technical Approach
 
@@ -31,6 +31,6 @@ Mapping zones to frost dates, calculating planting windows, and accounting for d
 
 ## Current State
 
-Right now the focus is simple: enter a zip code, select seeds, get dates, export to a calendar. That's it.
+The MVP is shipped: zip code in, planting dates out, calendar export. Remaining work is boundary-zone accuracy, microclimate gaps, and moving heavy shapefile queries server-side for performance.
 
-The technical challenges are real, but they're the kind I enjoy—learning unfamiliar tools, working with messy real-world data, and building something I'll actually use. I don't yet know what I'd do differently if I started over, but I'm not far enough along to need that clarity. This is a personal tool first, and I'm comfortable figuring it out one step at a time.
+The technical challenges are real, but they're the kind I enjoy — learning unfamiliar tools, working with messy real-world data, and building something I'll actually use. This is a personal tool first; the live demo is there because I use it every spring.

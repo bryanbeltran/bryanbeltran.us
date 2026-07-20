@@ -5,7 +5,7 @@ import { Metadata } from 'next'
 
 const projectsTitle = 'Side Projects — Bryan Beltrán'
 const projectsDescription =
-  'Side projects in web development, backend tooling, and developer utilities by Bryan Beltrán.'
+  'Side projects in web development, platform tooling, and developer utilities by Bryan Beltrán.'
 
 const base = genPageMetadata({
   title: projectsTitle,
@@ -27,7 +27,7 @@ export default function Projects() {
           My Projects
         </h1>
         <p className="text-lg text-gray-600 dark:text-gray-400">
-          Side projects and experiments in web development, backend tooling, and developer
+          Side projects and experiments in web development, platform tooling, and developer
           utilities.
         </p>
       </div>
