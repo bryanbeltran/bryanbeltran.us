@@ -101,10 +101,16 @@ const resumeData = {
     },
   ],
   education: {
-    degree: 'B.S. Computer Information Technology, Minor in Spanish',
-    school: 'Minnesota State University, Mankato',
-    location: 'Mankato, MN',
-    date: 'May 2019',
+    degree: 'M.S. Computer Science, Machine Learning Track',
+    school: 'Georgia Institute of Technology',
+    location: 'Atlanta, GA',
+    date: 'Begins Spring 2027',
+    previous: {
+      degree: 'B.S. Computer Information Technology, Minor in Spanish',
+      school: 'Minnesota State University, Mankato',
+      location: 'Mankato, MN',
+      date: 'May 2019',
+    },
   },
 }
 

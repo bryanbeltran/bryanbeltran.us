@@ -63,8 +63,9 @@ export default function Home() {
           </h2>
           <p className="leading-relaxed text-gray-600 dark:text-gray-400">
             I work on Chewy&apos;s Agent Experience team, building systems for customer care across
-            chat, phone, and email. Side projects solve problems in my own life and give me room to
-            learn.
+            chat, phone, and email. I was recently admitted to Georgia Tech&apos;s Master of Science
+            in Computer Science program and will begin in Spring 2027, following the Machine
+            Learning track. Side projects solve problems in my own life and give me room to learn.
           </p>
           <Link
             href="/about"

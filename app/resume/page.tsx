@@ -79,6 +79,10 @@ export default function ResumePage() {
             {resumeData.education.degree}, {resumeData.education.school} —{' '}
             {resumeData.education.location}, {resumeData.education.date}
           </div>
+          <div>
+            {resumeData.education.previous.degree}, {resumeData.education.previous.school} —{' '}
+            {resumeData.education.previous.location}, {resumeData.education.previous.date}
+          </div>
         </section>
       </div>
     </>
