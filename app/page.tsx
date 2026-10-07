@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Link from '@/components/Link'
 import Card from '@/components/Card'
 import JsonLd from '@/components/JsonLd'
-import projectsData from '@/data/projectsData'
+import { flagshipProjects, formatProjectStatus, selectedProjects } from '@/data/projectsData'
 import siteMetadata from '@/data/siteMetadata'
 import { allBlogs } from 'contentlayer/generated'
 import { sortPosts } from 'pliny/utils/contentlayer'
@@ -10,10 +10,10 @@ import { filterPublishedPosts } from '@/lib/blog'
 import { personJsonLd, webSiteJsonLd } from '@/lib/jsonLd'
 
 export const metadata: Metadata = {
-  title: { absolute: 'Bryan Beltrán — Software Engineer' },
+  title: { absolute: 'Bryan Beltrán — Software Engineer II' },
   description: siteMetadata.description,
   openGraph: {
-    title: 'Bryan Beltrán — Software Engineer',
+    title: 'Bryan Beltrán — Software Engineer II',
     description: siteMetadata.description,
     url: siteMetadata.siteUrl,
     siteName: siteMetadata.title,
@@ -23,17 +23,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Bryan Beltrán — Software Engineer',
+    title: 'Bryan Beltrán — Software Engineer II',
     description: siteMetadata.description,
     images: [siteMetadata.socialBanner],
   },
-}
-
-function formatProjectStatus(status?: string) {
-  if (!status) return null
-  if (status === 'In Progress') return 'In development – GitHub only'
-  if (status === 'Launched') return 'Launched'
-  return status
 }
 
 export default function Home() {
@@ -53,8 +46,23 @@ export default function Home() {
             Bryan Beltrán
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-400">
-            Software Engineer at Chewy — Customer Care & Agent Experience
+            Software Engineer II at Chewy — event-driven systems, observability, and developer
+            tooling
           </p>
+          <div className="flex flex-wrap justify-center gap-3 pt-2">
+            <Link
+              href="/resume"
+              className="bg-primary-600 hover:bg-primary-700 focus-visible:ring-primary-500 rounded-md px-4 py-2 font-semibold text-white focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
+            >
+              View Resume
+            </Link>
+            <Link
+              href="/projects"
+              className="rounded-md border border-gray-300 px-4 py-2 font-semibold hover:bg-gray-100 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none dark:border-gray-600 dark:hover:bg-gray-800"
+            >
+              Explore Selected Work
+            </Link>
+          </div>
         </section>
 
         <section className="space-y-2 py-8 md:py-10">
@@ -77,19 +85,41 @@ export default function Home() {
 
         <section className="py-8 md:py-10">
           <h2 className="mb-6 text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-100">
-            What I’m Building
+            Selected Work
           </h2>
-          <div className="-m-4 flex flex-wrap">
-            {projectsData.map(({ title, description, href, repoHref, status }) => (
-              <Card
-                key={title}
-                title={title}
-                description={description}
-                href={href}
-                repoHref={repoHref}
-                status={formatProjectStatus(status) ?? undefined}
-              />
-            ))}
+          <div className="space-y-6">
+            {flagshipProjects.map(
+              ({ title, description, href, repoHref, detailsHref, status, highlights }) => (
+                <Card
+                  key={title}
+                  title={title}
+                  description={description}
+                  href={href}
+                  repoHref={repoHref}
+                  detailsHref={detailsHref}
+                  highlights={highlights}
+                  featured
+                  headingLevel="h3"
+                  status={formatProjectStatus(status)}
+                />
+              )
+            )}
+            <div className="grid gap-6 md:grid-cols-2">
+              {selectedProjects.map(
+                ({ title, description, href, repoHref, detailsHref, status }) => (
+                  <Card
+                    key={title}
+                    title={title}
+                    description={description}
+                    href={href}
+                    repoHref={repoHref}
+                    detailsHref={detailsHref}
+                    headingLevel="h3"
+                    status={formatProjectStatus(status)}
+                  />
+                )
+              )}
+            </div>
           </div>
           <Link
             href="/projects"

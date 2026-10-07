@@ -8,7 +8,7 @@ import { profilePageJsonLd } from '@/lib/jsonLd'
 
 const aboutTitle = 'About Bryan Beltrán — Chewy, Customer Care & Agent Experience'
 const aboutDescription =
-  "About Bryan Beltrán — software engineer on Chewy's Agent Experience team, building customer care systems for chat, phone, and email."
+  "About Bryan Beltrán — Software Engineer II on Chewy's Agent Experience team, building customer care systems for chat, phone, and email."
 
 const base = genPageMetadata({
   title: aboutTitle,

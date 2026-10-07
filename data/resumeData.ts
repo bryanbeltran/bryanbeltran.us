@@ -76,7 +76,8 @@ const resumeData = {
   projects: [
     {
       name: 'SeedStarter',
-      description: 'Frost-aware garden planner with live demo (Next.js, TypeScript).',
+      description:
+        'Climate-backed garden planner with 88 crops, 2,000 varieties, schedule exports, and production evaluation gates.',
     },
     {
       name: 'Browser Listener',
@@ -84,20 +85,9 @@ const resumeData = {
         'Privacy-first MV3 extension for consent-gated, local-only Facebook session capture and structured ZIP export.',
     },
     {
-      name: 'The Gathering Project',
-      description: 'Nonprofit website (Next.js, Vercel).',
-    },
-    {
-      name: 'GovDataHub',
-      description: 'FastAPI backend for government datasets.',
-    },
-    {
-      name: 'Anchor',
-      description: 'ADHD-focused focus homepage PWA with task lock and countdown timer.',
-    },
-    {
-      name: 'TrafficSim',
-      description: 'Zipper merge and roundabout traffic behavior simulator.',
+      name: 'Wiggum',
+      description:
+        'Python harness for isolated, validated, reviewable software iteration with auditable evidence.',
     },
   ],
   education: {

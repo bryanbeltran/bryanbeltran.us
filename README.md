@@ -1,20 +1,22 @@
-# Bryan Beltrán's Personal Blog & Portfolio
+# Bryan Beltrán — Software Engineering Portfolio
 
-> **Forked from** [timlrx/tailwind-nextjs-starter-blog](https://github.com/timlrx/tailwind-nextjs-starter-blog)
+Personal site, engineering portfolio, and technical notes for Bryan Beltrán, Software Engineer II at Chewy.
 
-This is my customized fork of **timlrx/tailwind-nextjs-starter-blog**, now tailored as my own personal website, blog, and developer portfolio.  
-Built with Next.js 15's App Router, Tailwind CSS, MDX, and Contentlayer, it features:
+[Live site](https://bryanbeltran.us) · [Site CI](https://github.com/bryanbeltran/bryanbeltran.us/actions/workflows/ci.yml) · [CodeQL](https://github.com/bryanbeltran/bryanbeltran.us/actions/workflows/codeql.yml)
 
-- **MDX-powered blog** with syntax highlighting, math support, and custom components
-- **Light & dark themes**, auto-detected or user-selectable
-- **Server Components** & **Incremental Static Regeneration** for top performance
-- **Simple content management** via Markdown/MDX files under `data/blog/`
-- **Projects showcase** powered by a data file at `data/projectsData.ts`
-- **Author profile** configured in `data/authors/default.mdx`
-- **Custom navigation** in `data/headerNavLinks.ts`
-- **SEO-ready** with RSS feed, sitemap, and built-in metadata helpers
-- **Optional integrations**: comments (Giscus), newsletter (Buttondown), search (Kbar)
-- **Analytics**: [Vercel Analytics](https://vercel.com/docs/analytics) (built-in, no env vars)
+Built with Next.js 15 App Router, TypeScript, Tailwind CSS, MDX, and Contentlayer. This repository demonstrates:
+
+- Static rendering with production metadata, sitemap, RSS, JSON-LD, and security headers
+- CI validation with ESLint, Vitest, dependency audit gates, and CodeQL
+- Technical writing and curated project evidence instead of a generic project gallery
+
+## Selected work
+
+- [SeedStarter](https://github.com/bryanbeltran/seed-starter) — climate-backed planting planner with production evaluation gates, OpenAPI docs, and a live demo
+- [Browser Listener](https://github.com/bryanbeltran/browser-listener) — privacy-first Chrome MV3 capture and local export pipeline
+- [Wiggum](https://github.com/bryanbeltran/wiggum) — auditable Python harness for isolated, validated software iteration
+
+The site started from [timlrx/tailwind-nextjs-starter-blog](https://github.com/timlrx/tailwind-nextjs-starter-blog); original attribution and license remain intact.
 
 ---
 
@@ -60,7 +62,7 @@ Edit `data/siteMetadata.js`:
 const siteMetadata = {
   title: 'bryanbeltran.us',
   description:
-    'Portfolio and writing by Bryan Beltrán — software engineer at Chewy (Customer Care & Agent Experience). Side projects and technical notes.',
+    'Software Engineer II at Chewy building event-driven customer-care systems, observability tooling, and developer utilities.',
   siteUrl: 'https://bryanbeltran.us',
   author: 'Bryan Beltrán',
   // ...social links, comment, newsletter config
@@ -89,6 +91,8 @@ interface Project {
   description: string
   href?: string
   repoHref?: string
+  detailsHref?: string
+  tier: 'flagship' | 'selected' | 'other'
   status?: 'In Progress' | 'Launched' | 'Paused'
 }
 
@@ -99,6 +103,8 @@ const projectsData: Project[] = [
       'Frost-aware garden planner with a live demo — ZIP-based zone lookup, planting timelines, and calendar export.',
     href: 'https://seed-starter.vercel.app',
     repoHref: 'https://github.com/bryanbeltran/seed-starter',
+    detailsHref: '/projects/seedstarter',
+    tier: 'flagship',
     status: 'Launched',
   },
   {
@@ -106,18 +112,28 @@ const projectsData: Project[] = [
     description:
       'Privacy-first MV3 extension for consent-gated, local-only Facebook session capture.',
     href: 'https://github.com/bryanbeltran/browser-listener',
+    tier: 'selected',
     status: 'In Progress',
   },
   {
-    title: 'The Gathering Project',
-    description: 'Website for a nonprofit organization. Built with Next.js and hosted on Vercel.',
-    href: 'https://www.thegatheringproject.us',
-    repoHref: 'https://github.com/bryanbeltran/thegatheringproject.us',
-    status: 'Launched',
+    title: 'Wiggum',
+    description: 'Auditable Python harness for isolated, validated software iteration.',
+    href: 'https://github.com/bryanbeltran/wiggum',
+    tier: 'selected',
+    status: 'In Progress',
   },
 ]
 
 export default projectsData
+```
+
+### Verification
+
+```bash
+pnpm lint
+pnpm test -- --run
+pnpm run audit:ci
+pnpm build
 ```
 
 ### Author Profile
@@ -128,7 +144,7 @@ Edit `data/authors/default.mdx`:
 ---
 name: 'Bryan Beltrán'
 avatar: '/static/images/avatar.png'
-occupation: 'Software Engineer'
+occupation: 'Software Engineer II'
 company: 'Chewy'
 email: 'bryan.beltran@mnsu.edu'
 github: 'bryanbeltran'

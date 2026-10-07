@@ -60,7 +60,8 @@ const ThemeSwitch = () => {
         type="button"
         aria-label="Theme switcher"
         aria-expanded={open}
-        aria-haspopup="listbox"
+        aria-controls="theme-menu"
+        aria-haspopup="menu"
         className="hover:text-primary-500 dark:hover:text-primary-400 flex shrink-0 cursor-pointer items-center justify-center text-gray-900 dark:text-gray-100"
         onClick={() => setOpen((v) => !v)}
         suppressHydrationWarning
@@ -69,17 +70,21 @@ const ThemeSwitch = () => {
       </button>
       {open && (
         <ul
-          role="listbox"
+          id="theme-menu"
+          role="menu"
+          aria-label="Theme options"
           className="absolute top-full right-0 z-[100] mt-2 w-32 overflow-hidden rounded-md border border-gray-200 bg-white py-1 shadow-lg dark:border-gray-700 dark:bg-gray-800"
         >
           {options.map(({ value, label, Icon }) => (
-            <li key={value} role="option" aria-selected={resolvedTheme === value}>
+            <li key={value} role="none">
               <button
                 type="button"
+                role="menuitemradio"
+                aria-checked={resolvedTheme === value}
                 className="hover:bg-primary-600 dark:hover:bg-primary-600 flex w-full cursor-pointer items-center px-3 py-2 text-left text-sm text-gray-900 hover:text-white dark:text-gray-100 dark:hover:text-white"
                 onClick={() => pick(value)}
               >
-                <span className="mr-2">
+                <span className="mr-2" aria-hidden="true">
                   <Icon />
                 </span>
                 {label}

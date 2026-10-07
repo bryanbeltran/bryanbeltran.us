@@ -1,11 +1,17 @@
-import projectsData from '@/data/projectsData'
+import {
+  flagshipProjects,
+  formatProjectStatus,
+  otherProjects,
+  selectedProjects,
+  type Project,
+} from '@/data/projectsData'
 import Card from '@/components/Card'
 import { genPageMetadata } from 'app/seo'
 import { Metadata } from 'next'
 
-const projectsTitle = 'Side Projects — Bryan Beltrán'
+const projectsTitle = 'Selected Engineering Projects — Bryan Beltrán'
 const projectsDescription =
-  'Side projects in web development, platform tooling, and developer utilities by Bryan Beltrán.'
+  'Selected engineering work in climate data, platform tooling, browser automation, and developer utilities by Bryan Beltrán.'
 
 const base = genPageMetadata({
   title: projectsTitle,
@@ -19,6 +25,22 @@ export const metadata: Metadata = {
   twitter: { ...base.twitter, title: projectsTitle },
 }
 
+function ProjectCard({ project, featured = false }: { project: Project; featured?: boolean }) {
+  return (
+    <Card
+      title={project.title}
+      description={project.description}
+      href={project.href}
+      repoHref={project.repoHref}
+      detailsHref={project.detailsHref}
+      highlights={project.highlights}
+      featured={featured}
+      headingLevel="h3"
+      status={formatProjectStatus(project.status)}
+    />
+  )
+}
+
 export default function Projects() {
   return (
     <div className="divide-y divide-gray-200 dark:divide-gray-700">
@@ -27,24 +49,43 @@ export default function Projects() {
           My Projects
         </h1>
         <p className="text-lg text-gray-600 dark:text-gray-400">
-          Side projects and experiments in web development, platform tooling, and developer
-          utilities.
+          One flagship project, selected engineering work, and smaller experiments.
         </p>
       </div>
 
-      <div className="container py-12">
-        <div className="-m-4 flex flex-wrap">
-          {projectsData.map(({ title, description, href, repoHref, status }) => (
-            <Card
-              key={title}
-              title={title}
-              description={description}
-              href={href}
-              repoHref={repoHref}
-              status={status}
-            />
-          ))}
-        </div>
+      <div className="container space-y-12 py-12">
+        <section aria-labelledby="flagship-project">
+          <h2 id="flagship-project" className="mb-4 text-2xl font-bold tracking-tight">
+            Flagship Project
+          </h2>
+          <div className="grid">
+            {flagshipProjects.map((project) => (
+              <ProjectCard key={project.title} project={project} featured />
+            ))}
+          </div>
+        </section>
+
+        <section aria-labelledby="selected-projects">
+          <h2 id="selected-projects" className="mb-4 text-2xl font-bold tracking-tight">
+            Selected Projects
+          </h2>
+          <div className="grid gap-6 md:grid-cols-2">
+            {selectedProjects.map((project) => (
+              <ProjectCard key={project.title} project={project} />
+            ))}
+          </div>
+        </section>
+
+        <section aria-labelledby="other-experiments">
+          <h2 id="other-experiments" className="mb-4 text-2xl font-bold tracking-tight">
+            Other Experiments
+          </h2>
+          <div className="grid gap-6 md:grid-cols-2">
+            {otherProjects.map((project) => (
+              <ProjectCard key={project.title} project={project} />
+            ))}
+          </div>
+        </section>
       </div>
     </div>
   )
