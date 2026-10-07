@@ -19,12 +19,14 @@ export default function ResumePage() {
       <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
         <h1 className="mb-2 text-3xl font-bold tracking-tight">{resumeData.name}</h1>
         <p className="text-muted-foreground mb-6 text-lg">{resumeData.title}</p>
-        <p className="mb-10 text-sm text-gray-700 dark:text-gray-300">{resumeData.summary}</p>
+        <p className="mb-10 text-base leading-6 text-gray-700 dark:text-gray-300">
+          {resumeData.summary}
+        </p>
 
         <section className="mb-10">
           <h2 className="mb-4 text-xl font-semibold">Skills</h2>
           {Object.entries(resumeData.skills).map(([category, skills], i) => (
-            <p key={i} className="mb-1 text-sm text-gray-800 dark:text-gray-200">
+            <p key={i} className="mb-1 text-base leading-6 text-gray-800 dark:text-gray-200">
               <strong>{category}:</strong> {skills.join(', ')}
             </p>
           ))}
@@ -41,7 +43,7 @@ export default function ResumePage() {
                 <span className="text-sm text-gray-500 dark:text-gray-400">{role.date}</span>
               </div>
               <p className="text-muted-foreground mb-1 text-sm">{role.location}</p>
-              <ul className="mt-2 list-inside list-disc text-sm text-gray-800 dark:text-gray-200">
+              <ul className="mt-2 list-inside list-disc text-base leading-6 text-gray-800 dark:text-gray-200">
                 {role.bullets.map((point, i) => (
                   <li key={i}>{point}</li>
                 ))}
@@ -52,7 +54,7 @@ export default function ResumePage() {
 
         <section className="mb-10">
           <h2 className="mb-4 text-xl font-semibold">Projects</h2>
-          <p className="text-muted-foreground mb-4 text-sm">
+          <p className="text-muted-foreground mb-4 text-base leading-6">
             Personal and side projects. Details and source code available at{' '}
             <a
               href="https://bryanbeltran.us/projects"
@@ -64,7 +66,7 @@ export default function ResumePage() {
             </a>
             .
           </p>
-          <ul className="list-inside list-disc text-sm text-gray-800 dark:text-gray-200">
+          <ul className="list-inside list-disc text-base leading-6 text-gray-800 dark:text-gray-200">
             {resumeData.projects.map((project, i) => (
               <li key={i}>
                 <strong>{project.name}</strong> – {project.description}
@@ -75,11 +77,11 @@ export default function ResumePage() {
 
         <section className="mb-10">
           <h2 className="mb-4 text-xl font-semibold">Education</h2>
-          <div className="text-sm text-gray-800 dark:text-gray-200">
+          <div className="text-base leading-6 text-gray-800 dark:text-gray-200">
             {resumeData.education.degree}, {resumeData.education.school} —{' '}
             {resumeData.education.location}, {resumeData.education.date}
           </div>
-          <div>
+          <div className="text-base leading-6 text-gray-800 dark:text-gray-200">
             {resumeData.education.previous.degree}, {resumeData.education.previous.school} —{' '}
             {resumeData.education.previous.location}, {resumeData.education.previous.date}
           </div>

@@ -10,8 +10,14 @@ import Footer from '@/components/Footer'
 import siteMetadata from '@/data/siteMetadata'
 import { ThemeProviders } from './theme-providers'
 import { Metadata, Viewport } from 'next'
+import { Inter } from 'next/font/google'
 
 const basePath = process.env.BASE_PATH || ''
+
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteMetadata.siteUrl),
@@ -84,7 +90,9 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang={siteMetadata.language} className="scroll-smooth" suppressHydrationWarning>
-      <body className="bg-background text-foreground pl-[calc(100vw-100%)] antialiased">
+      <body
+        className={`${inter.className} bg-background text-foreground pl-[calc(100vw-100%)] antialiased`}
+      >
         <a
           href="#main-content"
           className="focus:bg-background focus:text-foreground sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:rounded-md focus:px-4 focus:py-2 focus:shadow-lg"
