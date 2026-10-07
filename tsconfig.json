@@ -41,5 +41,5 @@
     ".contentlayer/generated/**/*.json",
     ".next/types/**/*.ts"
   ],
-  "exclude": ["node_modules", "tests", "vitest.config.ts"]
+  "exclude": ["node_modules", "vitest.config.ts"]
 }

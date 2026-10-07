@@ -1,4 +1,29 @@
-/** @type {import("pliny/config").PlinyConfig } */
+/** @type {import('pliny/comments').GiscusConfig['giscusConfig']} */
+const giscusConfig = {
+  repo: process.env.NEXT_PUBLIC_GISCUS_REPO || '',
+  repositoryId: process.env.NEXT_PUBLIC_GISCUS_REPOSITORY_ID || '',
+  category: process.env.NEXT_PUBLIC_GISCUS_CATEGORY || '',
+  categoryId: process.env.NEXT_PUBLIC_GISCUS_CATEGORY_ID || '',
+  mapping: 'pathname',
+  reactions: '1',
+  metadata: '0',
+  theme: 'light',
+  darkTheme: 'transparent_dark',
+  themeURL: '',
+  lang: 'en',
+}
+
+const hasGiscusConfig = [
+  giscusConfig.repo,
+  giscusConfig.repositoryId,
+  giscusConfig.category,
+  giscusConfig.categoryId,
+].every(Boolean)
+
+/** @type {import('pliny/comments').CommentsConfig | undefined} */
+const comments = hasGiscusConfig ? { provider: 'giscus', giscusConfig } : undefined
+
+/** @type {import('pliny/config').PlinyConfig } */
 const siteMetadata = {
   title: 'bryanbeltran.us',
   author: 'Bryan Beltrán',
@@ -27,22 +52,7 @@ const siteMetadata = {
   newsletter: {
     provider: '',
   },
-  comments: {
-    provider: 'giscus',
-    giscusConfig: {
-      repo: process.env.NEXT_PUBLIC_GISCUS_REPO,
-      repositoryId: process.env.NEXT_PUBLIC_GISCUS_REPOSITORY_ID,
-      category: process.env.NEXT_PUBLIC_GISCUS_CATEGORY,
-      categoryId: process.env.NEXT_PUBLIC_GISCUS_CATEGORY_ID,
-      mapping: 'pathname',
-      reactions: '1',
-      metadata: '0',
-      theme: 'light',
-      darkTheme: 'transparent_dark',
-      themeURL: '',
-      lang: 'en',
-    },
-  },
+  comments,
   search: {
     provider: 'kbar',
     kbarConfig: {
