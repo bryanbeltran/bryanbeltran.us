@@ -30,7 +30,7 @@ const projectsData: Project[] = [
   {
     title: 'Browser Listener',
     description:
-      'Privacy-first MV3 extension for consent-gated, local-only Facebook session capture — posts, comments, reactions, and people exported as a structured ZIP. No upload, no telemetry.',
+      'Local-first MV3 Chrome extension for recording authorized browser sessions into portable, redacted bug-reproduction and evidence bundles. No upload or telemetry.',
     href: 'https://github.com/bryanbeltran/browser-listener',
     status: 'In Progress',
     tier: 'selected',
