@@ -53,10 +53,16 @@ const projectsData: Project[] = [
   },
   {
     title: 'GovDataHub',
-    description: 'FastAPI backend for aggregating and querying government datasets.',
-    href: 'https://github.com/bryanbeltran/govdatahub',
-    status: 'Paused',
-    tier: 'other',
+    description:
+      'Private prototype for a commercially reusable Census data service with catalog discovery, normalized queries, caching, and provenance.',
+    detailsHref: '/projects/govdatahub',
+    status: 'In Progress',
+    tier: 'selected',
+    highlights: [
+      'FastAPI facade over ACS, business, and other U.S. Census datasets.',
+      'Variable discovery, normalized queries, saved requests, and CSV/JSON export.',
+      'Source URLs, fetch times, cache state, and checksums travel with every result.',
+    ],
   },
   {
     title: 'Anchor',
@@ -78,7 +84,7 @@ const projectsData: Project[] = [
 
 export function formatProjectStatus(status?: Project['status']) {
   if (!status) return undefined
-  if (status === 'In Progress') return 'In development – GitHub only'
+  if (status === 'In Progress') return 'In development'
   return status
 }
 

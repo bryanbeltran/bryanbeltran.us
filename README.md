@@ -15,6 +15,7 @@ Built with Next.js 15 App Router, TypeScript, Tailwind CSS, MDX, and Contentlaye
 - [SeedStarter](https://github.com/bryanbeltran/seed-starter) — climate-backed planting planner with production evaluation gates, OpenAPI docs, and a live demo
 - [Browser Listener](https://github.com/bryanbeltran/browser-listener) — privacy-first Chrome MV3 capture and local export pipeline
 - [Wiggum](https://github.com/bryanbeltran/wiggum) — auditable Python harness for isolated, validated software iteration
+- [GovDataHub](https://bryanbeltran.us/projects/govdatahub) — private prototype for a commercially reusable Census data service with provenance-aware queries
 
 The site started from [timlrx/tailwind-nextjs-starter-blog](https://github.com/timlrx/tailwind-nextjs-starter-blog); original attribution and license remain intact.
 

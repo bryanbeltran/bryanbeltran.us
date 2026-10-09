@@ -1,50 +1,57 @@
 ---
-title: 'Starting GovDataHub — Collecting Public Data in One Place'
-seoTitle: 'GovDataHub — Collecting Public Data'
+title: 'GovDataHub — A Commercially Reusable Census Data Service'
+seoTitle: 'GovDataHub — A Commercially Reusable Census Data Service'
 date: '2026-06-01'
-summary: 'Early notes on GovDataHub, a side project to collect, organize, and explore government datasets without jumping between dozens of portals.'
+lastmod: '2026-10-09'
+summary: 'How GovDataHub turns public U.S. Census data into a queryable, provenance-aware data-as-a-service layer.'
 tags: ['govdatahub', 'tools', 'opensource']
 draft: false
 ---
 
 Government data is public. Finding it in a form you can actually use is another story.
 
-I started [GovDataHub](https://github.com/bryanbeltran/govdatahub) because I kept hitting the same friction: interesting datasets scattered across federal agencies, inconsistent formats, and no single place to bookmark what I had already explored.
+I built GovDataHub to put a small, stable interface in front of U.S. Census datasets: a catalog for discovery, a normalized query contract, cached results, and source context that stays attached to every response.
 
-This is a dev log, not a launch announcement. The project is paused while I focus on other work.
+The implementation is currently a private working prototype. The repository is intentionally not public, but the product boundary is straightforward enough to describe: make public data easier to find, query, and reuse without pretending that an aggregator owns the underlying source.
 
-## The problem I am solving
+## The problem
 
 When I research a topic — housing, transit, agriculture, whatever — I end up with:
 
-- A dozen browser tabs across `.gov` domains
-- CSV downloads with incompatible schemas
-- No memory of which dataset I already evaluated and rejected
+- Browser tabs across several `.gov` dataset portals
+- Variable names and geography syntax that differ by source
+- CSV downloads with little context about vintage, retrieval time, or provenance
 
-GovDataHub is my attempt to build a personal index: sources I care about, metadata that helps me compare them, and a path toward exploration without starting from zero each time.
+GovDataHub gives those requests a common workspace. A user can choose a dataset, discover variables, shape a Census query, inspect the returned table, and keep the source URL and cache details with the result.
 
-## Design constraints
+## What is implemented
 
-Personal tool rules apply:
+The first service slice includes:
 
-- **Start small** — One domain I actually research beats a generic crawler for everything
-- **Provenance matters** — Every dataset needs source URL, retrieval date, and license notes
-- **Boring storage first** — SQLite or Postgres before anything clever
+- A catalog covering ACS, business, and other configured Census datasets
+- Variable discovery with labels, concepts, predicate types, and source links
+- Normalized query endpoints for `get`, `for`, `in`, `time`, and additional predicates
+- Cache-aware responses with fetch time, expiry, checksum, and row count
+- Saved queries and repeatable catalog and refresh jobs
+- An accessible responsive explorer with loading, error, empty, JSON, and CSV states
 
-I am not trying to replace Data.gov. I want a workspace that respects how individual developers and researchers actually work.
+The stack is intentionally plain: FastAPI, async SQLAlchemy, Alembic, HTTPX, Pydantic settings, and a dependency-free browser UI. The boring pieces are useful here because the data model and source boundaries matter more than a large frontend framework.
 
-## Technical direction
+## Commercial reuse
 
-Stack is still settling. Likely Python for ingestion scripts, a simple API layer, and a frontend when the data model stops changing every week.
+The initial sources are U.S. Census statistical datasets, which are generally available for commercial reuse. GovDataHub is designed to preserve the responsibilities that come with that reuse:
 
-Early milestones:
+- Keep the U.S. Census Bureau attribution and source links
+- Follow API terms, rate limits, and dataset-specific notices
+- Avoid implying agency endorsement
+- Keep provenance visible when a result is copied into another product
 
-1. Catalog schema (source, title, format, update cadence)
-2. One end-to-end ingest pipeline for a single agency feed
-3. Search and filter over what has been collected
+The service adds organization, queryability, and operational context. It does not add a non-commercial restriction to the underlying Census output.
 
-## Related work on this site
+## What remains
 
-GovDataHub sits alongside other [side projects](/projects) — SeedStarter for gardening, Browser Listener for local Facebook session capture. Each solves a narrow problem I have repeatedly.
+The prototype is not a public hosted API yet. Before operating one, I would want to choose a narrow audience, add explicit access controls and quota management, define a refresh budget, and measure whether a stable query facade is more useful than direct Census access for that audience.
 
-I will post updates as the catalog and ingestion pieces land. If public data organization is your kind of rabbit hole, the repo is on GitHub.
+GovDataHub sits alongside other [side projects](/projects) — SeedStarter for gardening, Browser Listener for local session capture, and Wiggum for auditable software iteration. Each solves a narrow problem I have repeatedly encountered.
+
+Read the [project case study](/projects/govdatahub) for the current service boundary and design signals, or start with the [Census dataset documentation](https://www.census.gov/data/developers/data-sets.html).

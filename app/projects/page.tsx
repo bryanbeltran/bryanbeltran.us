@@ -11,7 +11,7 @@ import { Metadata } from 'next'
 
 const projectsTitle = 'Selected Engineering Projects — Bryan Beltrán'
 const projectsDescription =
-  'Selected engineering work in climate data, platform tooling, browser automation, and developer utilities by Bryan Beltrán.'
+  'Selected engineering work in public data, climate data, platform tooling, browser automation, and developer utilities by Bryan Beltrán.'
 
 const base = genPageMetadata({
   title: projectsTitle,

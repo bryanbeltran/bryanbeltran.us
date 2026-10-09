@@ -53,6 +53,9 @@ yarn-error.log*
 # Contentlayer
 .contentlayer
 
+# Workspace-local temp used when system temp space is constrained
+/.tmp/
+
 # IDE settings
 .vscode/
 .cursor/

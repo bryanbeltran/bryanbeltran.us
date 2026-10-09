@@ -31,7 +31,7 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
       - run: pnpm exec eslint app components layouts scripts lib
-      - run: pnpm exec vitest run
+      - run: pnpm run test:ci
       # Fails on actionable advisories; scripts/audit.mjs documents known transitive advisories without safe upgrades.
       - run: pnpm run audit:ci
       - run: pnpm build

@@ -106,7 +106,7 @@ export default function Home() {
             )}
             <div className="grid gap-6 md:grid-cols-2">
               {selectedProjects.map(
-                ({ title, description, href, repoHref, detailsHref, status }) => (
+                ({ title, description, href, repoHref, detailsHref, status, highlights }) => (
                   <Card
                     key={title}
                     title={title}
@@ -114,6 +114,7 @@ export default function Home() {
                     href={href}
                     repoHref={repoHref}
                     detailsHref={detailsHref}
+                    highlights={highlights}
                     headingLevel="h3"
                     status={formatProjectStatus(status)}
                   />
