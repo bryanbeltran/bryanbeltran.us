@@ -28,6 +28,56 @@ const projectsData: Project[] = [
     ],
   },
   {
+    title: 'Room for Words',
+    description:
+      'Calm, local-first literacy companion for K–2 learners practicing decoding and phonics fluency.',
+    href: 'https://roomforwords.com',
+    status: 'Launched',
+    tier: 'selected',
+    highlights: [
+      'Brief practice rounds for regular-word decoding, grapheme–phoneme patterns, and comfortable fluency.',
+      'Teacher catalog, adult-managed learner tools, and privacy-preserving local practice boundaries.',
+      'Buildless web app with accessible interactions and a D1-backed worker API for optional sync.',
+    ],
+  },
+  {
+    title: 'Voiceprint',
+    description:
+      'Local-first personal voice compiler that turns interviews and writing samples into inspectable, versioned instructions for AI tools.',
+    href: 'https://github.com/bryanbeltran/voiceprint',
+    status: 'In Progress',
+    tier: 'selected',
+    highlights: [
+      'Guided interview and corpus modes produce an inspectable canonical writing profile.',
+      'Deterministic adapters export portable instructions for Codex, Claude, ChatGPT, Cursor, and Markdown.',
+      'Local persistence, version history, diffing, and blind A/B evaluation keep the workflow user-owned.',
+    ],
+  },
+  {
+    title: 'Math Garden',
+    description:
+      'Production-oriented, accessible K–5 math practice platform with teacher-authored game versions and anonymous learner play.',
+    status: 'In Progress',
+    tier: 'selected',
+    highlights: [
+      'Eight playable templates with deterministic sessions, feedback, hints, and refresh recovery.',
+      'Teacher review, publication, immutable versions, rollback, assignments, and a curated library.',
+      'Minnesota K–5 standards coverage with explicit accessibility, privacy, and content-review boundaries.',
+    ],
+  },
+  {
+    title: 'Room for Math',
+    description:
+      'Buildless teacher-facing library of ready-to-use K–5 math games with local custom-game creation.',
+    status: 'In Progress',
+    tier: 'selected',
+    highlights: [
+      '57 preloaded games spanning Kindergarten through Grade 5 and Minnesota’s 2022 math strands.',
+      'Search and filters with teacher guidance, detail views, and short playable previews.',
+      'Device-local custom-game builder with a responsive, dependency-free browser runtime.',
+    ],
+  },
+  {
     title: 'Browser Listener',
     description:
       'Local-first MV3 Chrome extension for recording authorized browser sessions into portable, redacted bug-reproduction and evidence bundles. No upload or telemetry.',
